@@ -38,7 +38,7 @@ h6{
 }
 
 h4,h5,h6{
-    color:#2980B9;
+    color:#c6a0f6;
     font-weight:300;
 }
 
@@ -435,7 +435,7 @@ table tr:nth-child(2n) td{
     }
 
     #toggle-sidebar h2 {
-        background-color:#2980B9;
+        background-color:#c6a0f6;
         width:100%;
         height:50px;
         left:0;
@@ -581,7 +581,7 @@ a .fa,a #content .admonition-title,#content a .admonition-title{
     font-weight:bold;
     display:block;
     color:#fff;
-    /* background:#6ab0de; */
+    /* background:#c6a0f6; */
     /* margin:-12px; */
     padding:6px 12px;
     margin-bottom:0px}
@@ -650,7 +650,7 @@ label{
     font-size:90%}
 
 a{
-    color:#2980B9;
+    color:#c6a0f6;
     text-decoration:none;
     cursor:pointer}
 
@@ -792,7 +792,7 @@ hr{
 
 #table-of-contents h2{
     z-index:200;
-    background-color:#2980B9;
+    background-color:#c6a0f6;
     text-align:center;
     padding:0.809em;
     display:block;
