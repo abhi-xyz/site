@@ -3,7 +3,7 @@
 #+AUTHOR: Abhinandh S
 #+DATE: 03-08-2024
 #+DESCRIPTION: Nothing special.
-#+EXPORT_FILE_NAME: ~/web/website/org-export-dispach.html
+#+EXPORT_FILE_NAME: ~/web/website/index.html
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 #+OPTIONS: num:nil
 
