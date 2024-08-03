@@ -10,8 +10,7 @@
 #+HTML_HEAD: <style> #content{max-width:1800px;}</style>
 #+HTML_HEAD: <style> p{max-width:800px;}</style>
 #+HTML_HEAD: <style> li{max-width:800px;}</style
-
-#+HTML_HEAD: <style> body{background:#11111b; color:#404040;} </style>
+#+HTML_HEAD: <style> body{background:#11111b; color:#404040;}</style>
 #+HTML_HEAD: <style> #content{background:#11111b;} </style> 
 
 #+HTML_HEAD: <style> blockquote{background-color: #1e1e2e; border-left:5px solid#cba6f7;} </style>
