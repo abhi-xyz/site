@@ -19,11 +19,12 @@
 
 * About me
 
-[[File:~/Web/Website/assets/Resized.png]]
-
+[[File:~/Web/website/asse
 #+BEGIN_QUOTE
+
 Whatever you do in life will be insignificant, but it's very important that you do it 'cause nobody else will. Like when someone comes into your life and half of you says: "You're nowhere near ready". And the other half says: "Make her yours forever".
                   - Tyler [ Remember me ]
+
 #+END_QUOTE
 
 #+BEGIN_SRC rust
@@ -31,3 +32,57 @@ fn main() {
     println!("Hello world!");
 } 
 #+END_SRC
+
+
+* Super fast nix-shell
+
+A feature of the nix Flake edition is that Nix evaluations are cached.
+
+Let’s say that your project has a shell.nix file that looks like this:
+
+#+BEGIN_SRC nix
+
+{ pkgs ? import <nixpkgs> { } }:
+with pkgs;
+mkShell {
+  buildInputs = [
+    nixpkgs-fmt
+  ];
+
+  shellHook = ''
+    # ...
+  '';
+}
+
+#+END_SRC
+
+Running nix-shell can be a bit slow and take 1-3 seconds.
+
+** Using flake
+
+Now create a flake.nix file in the same repository:
+
+#+BEGIN_SRC nix
+
+{
+  description = "my project description";
+
+  inputs.flake-utils.url = "github:numtide/flake-utils";
+
+  outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.lib.eachDefaultSystem
+      (system:
+        let pkgs = nixpkgs.legacyPackages.${system}; in
+        {
+          devShells.default = import ./shell.nix { inherit pkgs; };
+        }
+      );
+}
+
+#+END_SRC
+
+Run git add flake.nix so that Nix recognizes it.
+
+And finally, run nix develop. This is what replaces the old nix-shell invocation.
+
+Exit and run again, this command should now be super fast. 

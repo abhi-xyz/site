@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-08-03 Sat 20:08 -->
+<!-- 2024-08-03 Sat 20:18 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>index</title>
@@ -26,6 +26,11 @@
 <ul>
 <li><a href="#org492a92e">Welcome</a></li>
 <li><a href="#orgacc930a">About me</a></li>
+<li><a href="#orgff518db">Super fast nix-shell</a>
+<ul>
+<li><a href="#org00d757c">Using flake</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -65,13 +70,14 @@
 <div id="outline-container-orgacc930a" class="outline-2">
 <h2 id="orgacc930a">About me</h2>
 <div class="outline-text-2" id="text-orgacc930a">
-
-<div id="org12030ea" class="figure">
-<p><img src="file:///home/abhi/Web/Website/assets/Resized.png" alt="Resized.png" />
+<p>
+[[<a href="file:///home/abhi/Web/website/asse">file:///home/abhi/Web/website/asse</a>
 </p>
-</div>
-
 <blockquote>
+<p>
+
+</p>
+
 <p>
 Whatever you do in life will be insignificant, but it's very important that you do it 'cause nobody else will. Like when someone comes into your life and half of you says: "You're nowhere near ready". And the other half says: "Make her yours forever".
 </p>
@@ -88,11 +94,87 @@ Whatever you do in life will be insignificant, but it's very important that you 
 </div>
 </div>
 </div>
+
+
+<div id="outline-container-orgff518db" class="outline-2">
+<h2 id="orgff518db">Super fast nix-shell</h2>
+<div class="outline-text-2" id="text-orgff518db">
+<p>
+A feature of the nix Flake edition is that Nix evaluations are cached.
+</p>
+
+<p>
+Let’s say that your project has a shell.nix file that looks like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nix">
+{ pkgs ? import &lt;nixpkgs&gt; { } }:
+with pkgs;
+mkShell {
+  buildInputs = [
+    nixpkgs-fmt
+  ];
+
+  shellHook = ''
+    # ...
+  '';
+}
+
+</pre>
+</div>
+
+<p>
+Running nix-shell can be a bit slow and take 1-3 seconds.
+</p>
+</div>
+
+<div id="outline-container-org00d757c" class="outline-3">
+<h3 id="org00d757c">Using flake</h3>
+<div class="outline-text-3" id="text-org00d757c">
+<p>
+Now create a flake.nix file in the same repository:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nix">
+{
+  description = "my project description";
+
+  inputs.flake-utils.url = "github:numtide/flake-utils";
+
+  outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.lib.eachDefaultSystem
+      (system:
+        let pkgs = nixpkgs.legacyPackages.${system}; in
+        {
+          devShells.default = import ./shell.nix { inherit pkgs; };
+        }
+      );
+}
+
+</pre>
+</div>
+
+<p>
+Run git add flake.nix so that Nix recognizes it.
+</p>
+
+<p>
+And finally, run nix develop. This is what replaces the old nix-shell invocation.
+</p>
+
+<p>
+Exit and run again, this command should now be super fast. 
+</p>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 03-08-2024</p>
 <p class="author">Author: Abhinandh S</p>
-<p class="date">Created: 2024-08-03 Sat 20:08</p>
+<p class="date">Created: 2024-08-03 Sat 20:18</p>
 </div>
 </body>
 </html>
