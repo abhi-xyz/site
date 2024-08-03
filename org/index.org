@@ -7,16 +7,10 @@
 #+SETUPFILE: ~/web/website/org-html-themes/org/theme-readtheorg.setup
 #+OPTIONS: num:nil
 #+HTML_HEAD: <style>pre.src{background:#11111b;color:white;} </style>
-#+HTML_HEAD: <style> #content{max-width:1800px;}</style>
-#+HTML_HEAD: <style> p{max-width:800px;}</style>
-#+HTML_HEAD: <style> li{max-width:800px;}</style
-#+HTML_HEAD: <style> body{background:#11111b; color:#404040;}</style>
-#+HTML_HEAD: <style> #content{background:#11111b;} </style> 
-
-#+HTML_HEAD: <style> blockquote{background-color: #1e1e2e; border-left:5px solid#cba6f7;} </style>
-
-#+HTML_HEAD: <style> #table-of-contents header{color: #11111b;} </style>
-    
+#+HTML_HEAD: <style>#content{max-width:1800px;}</style>
+#+HTML_HEAD: <style>p{max-width:800px;}</style>
+#+HTML_HEAD: <style>li{max-width:800px;}</style>
+#+HTML_HEAD: <style>body{background:#11111b; color:#404040;}</style>
 
 
 * Welcome
