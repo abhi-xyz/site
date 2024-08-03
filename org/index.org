@@ -19,7 +19,7 @@
 
 * About me
 
-[[File:~/Web/website/assets/Resized.png]]
+[[File:../assets/Resized.png]]
 
 #+BEGIN_QUOTE
 
