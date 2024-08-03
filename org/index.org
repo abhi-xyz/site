@@ -11,6 +11,10 @@
 #+HTML_HEAD: <style>p{max-width:800px;}</style>
 #+HTML_HEAD: <style>li{max-width:800px;}</style>
 #+HTML_HEAD: <style>body{background:#11111b; color:#404040;}</style>
+#+HTML_HEAD: <style>ul.nav>li.active a {color: #11111b !important;}</style>
+#+HTML_HEAD: <style>blockquote{background-color: #181825;}</style>
+
+
 
 
 * Welcome
