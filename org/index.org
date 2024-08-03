@@ -16,7 +16,7 @@
 #+HTML_HEAD: <style> body{background:#11111b; color:#404040;} </style>
 #+HTML_HEAD: <style> #content{background:#11111b;} </style> 
 
-#+HTML_HEAD: <style> blockquote{background-color: #1e1e2e; border-left:5px soli#a6e3a1;} </style>
+#+HTML_HEAD: <style> blockquote{background-color: #1e1e2e; border-left:5px solid#cba6f7;} </style>
 
 #+HTML_HEAD: <style> #table-of-contents header{color: #11111b;} </style>
 #+HTML_HEAD: <style> #table-of-contents h2{background-color:#cba6f7;} </style>
