@@ -1,0 +1,33 @@
+
+#+TITLE: Org Export Dispatch & Readtheorg
+#+AUTHOR: Abhinandh S
+#+DATE: 03-08-2024
+#+DESCRIPTION: Nothing special.
+#+EXPORT_FILE_NAME: ~/web/website/org-export-dispach.html
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+OPTIONS: num:nil
+
+* Welcome
+
+#+CAPTION: This is a table with lines around and between cells
+#+ATTR_HTML: :border 2 :rules all :frame border
+
+| TITLE | NAME |
+|-------+------|
+| one   |      |
+|       |      |
+
+* About me
+
+[[File:~/Web/Website/assets/Resized.png]]
+
+#+BEGIN_QUOTE
+Whatever you do in life will be insignificant, but it's very important that you do it 'cause nobody else will. Like when someone comes into your life and half of you says: "You're nowhere near ready". And the other half says: "Make her yours forever".
+                  - Tyler [ Remember me ]
+#+END_QUOTE
+
+#+BEGIN_SRC rust
+fn main() {
+    println!("Hello world!");
+} 
+#+END_SRC

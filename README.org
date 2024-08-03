@@ -1,1 +1,4 @@
 * Website
+
+
+[[file: ~/web/website/Resize.png]]
