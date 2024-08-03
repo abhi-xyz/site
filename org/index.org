@@ -4,7 +4,7 @@
 #+DATE: 03-08-2024
 #+DESCRIPTION: Nothing special.
 #+EXPORT_FILE_NAME: ~/web/website/index.html
-#+SETUPFILE: https://github.com/abhi-xyz/website/blob/master/org-html-themes/org/theme-readtheorg.setup
+#+SETUPFILE: ~/web/website/org-html-themes/org/theme-readtheorg.setup
 #+OPTIONS: num:nil
 
 * Welcome
