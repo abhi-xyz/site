@@ -38,7 +38,7 @@ h6{
 }
 
 h4,h5,h6{
-    color:#c6a0f6;
+    color:#2980B9;
     font-weight:300;
 }
 
@@ -51,7 +51,7 @@ html{
 
 body{
     background:#edf0f2;
-    color:#11111b;
+    color:#404040;
     font-family:"Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
     font-weight:normal;
     margin:0;
@@ -112,7 +112,7 @@ dd{
     margin-left:24px}
 
 #content .section ul li p:last-child,#content .toctree-wrapper ul li p:last-child,article ul li p:last-child{
-    margin-bottom:0}
+                                                                                                                                  margin-bottom:0}
 
 #content .section ul li ul,#content .toctree-wrapper ul li ul,article ul li ul{
     margin-bottom:0}
@@ -136,7 +136,7 @@ dd{
     margin-left:24px}
 
 #content .section ol li p:last-child,#content ol li p:last-child,article ol li p:last-child{
-    margin-bottom:0}
+                                                                                                                           margin-bottom:0}
 
 #content .section ol li ul,#content ol li ul,article ol li ul{
     margin-bottom:0}
@@ -416,34 +416,6 @@ table tr:nth-child(2n) td{
     }
 
     #table-of-contents h2 a {
-* Customizing a theme
-
-You love those themes, but you still would like to override particular HTML
-tags?  Some examples do follow...
-
-Before doing that, though, if you think it really is an improvement that could
-serve other persons as well, including me, you're invited to submit your
-change...
-
-** Change the background code blocks
-
-Here's an example to insert into your Org documents:
-
-#+begin_src org :tangle no
-# Change the background of source block.
-,#+HTML_HEAD: <style>pre.src{background:#343131;color:white;} </style>
-#+end_src
-
-** Unset body width limit of ReadTheOrg
-
-Solution provided by Malcolm Cook:
-
-#+begin_src org :tangle no
-,#+HTML_HEAD: <style> #content{max-width:1800px;}</style>
-,#+HTML_HEAD: <style> p{max-width:800px;}</style>
-,#+HTML_HEAD: <style> li{max-width:800px;}</style
-#+end_src
-
         display: block;
     }
 
@@ -463,7 +435,7 @@ Solution provided by Malcolm Cook:
     }
 
     #toggle-sidebar h2 {
-        background-color:#c6a0f6;
+        background-color:#2980B9;
         width:100%;
         height:50px;
         left:0;
@@ -609,7 +581,7 @@ a .fa,a #content .admonition-title,#content a .admonition-title{
     font-weight:bold;
     display:block;
     color:#fff;
-    /* background:#c6a0f6; */
+    /* background:#6ab0de; */
     /* margin:-12px; */
     padding:6px 12px;
     margin-bottom:0px}
@@ -651,7 +623,7 @@ a .fa,a #content .admonition-title,#content a .admonition-title{
 
 #content .admonition-title.note,#content .admonition-title.seealso{
     line-height: 1;
-    background:#c6a0f6}
+    background:#6ab0de}
 
 #content .admonition-title.warning,#content .admonition-title.caution,#content .admonition-title.attention{
     line-height: 1;
@@ -678,7 +650,7 @@ label{
     font-size:90%}
 
 a{
-    color:#c6a0f6;
+    color:#2980B9;
     text-decoration:none;
     cursor:pointer}
 
@@ -688,7 +660,7 @@ a:hover,a:active{
 }
 
 a:hover{
-    color:#c6a0f6}
+    color:#3091d1}
 
 a:visited{
     color:#9B59B6}
@@ -724,7 +696,7 @@ hr{
     font-weight:bold;
     text-transform:uppercase;
     font-size:80%;
-    color:#c6a0f6;
+    color:#2980B9;
     white-space:nowrap}
 
 #table-of-contents ul{
@@ -820,7 +792,7 @@ hr{
 
 #table-of-contents h2{
     z-index:200;
-    background-color:#c6a0f6;
+    background-color:#2980B9;
     text-align:center;
     padding:0.809em;
     display:block;
@@ -973,7 +945,7 @@ footer p{
 }
 
 #copyright a{
-    color:#c6a0f6;
+    color:#2980B9;
     text-decoration:none}
 
 #copyright .rst-current-version{
@@ -1000,7 +972,7 @@ footer p{
     margin-bottom:24px}
 
 .verse{
-    border-left:5px solid #c6a0f6;
+    border-left:5px solid #6AB0DE;
     background-color: #E7F2FA;
     padding: 6px 20px;
     font-style:italic;
@@ -1080,7 +1052,7 @@ h2.footnotes{
 }
 
 .footnum, .footref{
-    color: #c6a0f6;
+    color: #2980b9;
     font-size: 90%;
     font-family:"Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
 }
@@ -1116,7 +1088,7 @@ h2.footnotes{
 }
 
 .done{
-    background-color: #c6a0f6;
+    background-color: #6ab0de;
     padding: 0px 4px;
     color: #fff;
 }
