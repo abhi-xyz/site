@@ -13,6 +13,43 @@
 
 * RUST PROGRAMING LANGUAGE
 
+- This guide is for absolute biggners who have no prior programming experiance but is comfortable with terminal
+
+
+So let's start by a simple bash script
+
+#+BEGIN_SRC bash
+
+mkdir ~/device
+
+mount /dev/sda1 ~/device && echo "Mounted sucessfully"
+
+touch example.txt
+
+echo "This is an example file." > example.txt
+
+cat example.txt
+
+#+END_SRC
+
+So, how does this work ?
+
+we know that mkdir, mount touch are programs which does specific tasks.
+every exicutable situated in the /bin directory can be executed via a terminal.
+Users can setup there custom bin path to ~/.local/bin or ~/.bin thereby the exicuaatbles in those directories will get added to the path so that its acessable from terminal.
+
+when we install a distro some applications will get installed by default and we can use that right.
+
+In rust there is something like this. There is a set of crate/modules which are part of standard library which will be thre after we install rust.
+
+But in programing languages we need to impot 
+
+#+BEGIN_QUOTE
+
+path in bash is also imported this way via .bashrc
+
+#+END_QUOTE
+
 ** Structs in Rust
 
    A struct in Rust is a way to create custom data types. It is a collection of fields, each with its own type. Structs are useful for grouping related data together and creating more complex types.

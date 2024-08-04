@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-08-04 Sun 13:38 -->
+<!-- 2024-08-04 Sun 15:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -48,7 +48,63 @@
 <div id="outline-container-org9f33b97" class="outline-2">
 <h2 id="org9f33b97">RUST PROGRAMING LANGUAGE</h2>
 <div class="outline-text-2" id="text-org9f33b97">
+<ul class="org-ul">
+<li>This guide is for absolute biggners who have no prior programming experiance but is comfortable with terminal</li>
+</ul>
+
+
+<p>
+So let's start by a simple bash script
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">
+mkdir ~/device
+
+mount /dev/sda1 ~/device &amp;&amp; echo "Mounted sucessfully"
+
+touch example.txt
+
+echo "This is an example file." &gt; example.txt
+
+cat example.txt
+
+</pre>
 </div>
+
+<p>
+So, how does this work ?
+</p>
+
+<p>
+we know that mkdir, mount touch are programs which does specific tasks.
+every exicutable situated in the <i>bin directory can be executed via a terminal.
+Users can setup there custom bin path to ~</i>.local/bin or ~/.bin thereby the exicuaatbles in those directories will get added to the path so that its acessable from terminal.
+</p>
+
+<p>
+when we install a distro some applications will get installed by default and we can use that right.
+</p>
+
+<p>
+In rust there is something like this. There is a set of crate/modules which are part of standard library which will be thre after we install rust.
+</p>
+
+<p>
+But in programing languages we need to impot 
+</p>
+
+<blockquote>
+<p>
+
+</p>
+
+<p>
+path in bash is also imported this way via .bashrc
+</p>
+</blockquote>
+</div>
+
 <div id="outline-container-orgb59fb62" class="outline-3">
 <h3 id="orgb59fb62">Structs in Rust</h3>
 <div class="outline-text-3" id="text-orgb59fb62">
@@ -341,7 +397,7 @@ This implementation ensures that your notification settings have default values 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2024-08-04 Sun 13:38</p>
+<p class="date">Created: 2024-08-04 Sun 15:07</p>
 </div>
 </body>
 </html>
