@@ -32,7 +32,7 @@
 
 * About me
 
-[[File:../assets/Resized.png]]
+[[File:assets/Resized.png]]
 
 
 [[File: ../articles/nix-shell.org]]
