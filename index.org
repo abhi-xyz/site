@@ -35,7 +35,7 @@
 
 [[File:articles/ages.org]]
 
-[[file:articles/ages][Ages encryption]]
+[[File:articles/ages.org][Ages encryption]]
 
 [[File:articles/rust.org]]
 
