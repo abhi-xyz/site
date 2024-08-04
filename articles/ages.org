@@ -1,4 +1,6 @@
-age Command Examples
+* Ages Encription
+
+** Age Command Examples
 
 1. Generate an encrypted file that can be decrypted with a passphrase:
 
@@ -24,6 +26,6 @@ age Command Examples
 
 # age --decrypt --identity /path/to/private_key_file --output /path/to/decrypted_file /path/to/encrypted_file
 
-Summary
+** Summary
 
 In summary, Age is a modern and secure file encryption tool that prioritizes simplicity, security, and user-friendliness. With its support for modern encryption algorithms, secure key management practices, and compatibility across platforms, Age provides a reliable solution for encrypting and decrypting files while ensuring the confidentiality and integrity of sensitive data.
