@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-08-04 Sun 13:38 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<style>pre.src{background:#11111b;color:white;} </style>
+<style>#content{max-width:1800px;}</style>
+<style>p{max-width:800px;}</style>
+<style>li{max-width:800px;}</style>
+<style>body{background:#11111b; color:#404040;}</style>
+<style>ul.nav>li.active a {color: #11111b !important;}</style>
+<style>blockquote{background-color: #181825; border-left:5px solid #cba6f7;}</style>
+<style>#table-of-contents h2{z-index:200; background-color:#cba6f7;}</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org9f33b97">RUST PROGRAMING LANGUAGE</a>
+<ul>
+<li><a href="#orgb59fb62">Structs in Rust</a>
+<ul>
+<li><a href="#org8715d8e">Creating Instances of Structs</a></li>
+<li><a href="#orgfb6b255">Implementing Methods for Structs</a></li>
+<li><a href="#org97e67a9">Applying to Your clipcat<sub>notify</sub> Function</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org9f33b97" class="outline-2">
+<h2 id="org9f33b97">RUST PROGRAMING LANGUAGE</h2>
+<div class="outline-text-2" id="text-org9f33b97">
+</div>
+<div id="outline-container-orgb59fb62" class="outline-3">
+<h3 id="orgb59fb62">Structs in Rust</h3>
+<div class="outline-text-3" id="text-orgb59fb62">
+<p>
+A struct in Rust is a way to create custom data types. It is a collection of fields, each with its own type. Structs are useful for grouping related data together and creating more complex types.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-rust">
+struct Book {
+    title: String,
+    author: String,
+    pages: u32,
+}
+
+</pre>
+</div>
+
+<p>
+In this example, Book is a struct with three fields: title, author, and pages.
+</p>
+</div>
+
+<div id="outline-container-org8715d8e" class="outline-4">
+<h4 id="org8715d8e">Creating Instances of Structs</h4>
+<div class="outline-text-4" id="text-org8715d8e">
+<p>
+You can create an instance of a struct by specifying values for each field:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-rust">
+let my_book = Book {
+    title: String::from("The Rust Programming Language"),
+    author: String::from("Steve Klabnik and Carol Nichols"),
+    pages: 552,
+};
+
+</pre>
+</div>
+
+<ul class="org-ul">
+<li></li>
+
+<li></li>
+
+<li></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgfb6b255" class="outline-4">
+<h4 id="orgfb6b255">Implementing Methods for Structs</h4>
+<div class="outline-text-4" id="text-orgfb6b255">
+<p>
+The impl block allows you to define methods for a struct. Methods are functions that are associated with a struct.
+Basic impl Example.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-rust">
+impl Book {
+    fn get_summary(&amp;self) -&gt; String {
+        format!("{} by {} ({} pages)", self.title, self.author, self.pages)
+    }
+}
+
+</pre>
+</div>
+<p>
+Here, get<sub>summary</sub> is a method that returns a summary of the book.
+<b>*</b> Default Values with Structs
+</p>
+
+<p>
+To provide default values, you can implement the Default trait for your struct. This allows you to create an instance with default values for fields you don't specify.
+Implementing the Default Trait
+</p>
+
+<div class="org-src-container">
+<pre class="src src-rust">
+use std::default::Default;
+
+struct Book {
+    title: String,
+    author: String,
+    pages: u32,
+}
+
+impl Default for Book {
+    fn default() -&gt; Self {
+        Self {
+            title: String::from("Untitled"),
+            author: String::from("Unknown"),
+            pages: 0,
+        }
+    }
+}
+
+</pre>
+</div>
+<p>
+Now you can create a Book instance with default values:
+</p>
+<div class="org-src-container">
+<pre class="src src-rust">let default_book = Book::default();
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org97e67a9" class="outline-4">
+<h4 id="org97e67a9">Applying to Your clipcat<sub>notify</sub> Function</h4>
+<div class="outline-text-4" id="text-org97e67a9">
+<p>
+Let's define a struct for notification settings and implement methods for it, including default values.
+Define the Struct
+</p>
+
+<div class="org-src-container">
+<pre class="src src-rust">use notify_rust::Notification;
+use notify_rust::Timeout;
+use std::path::Path;
+
+struct NotificationSettings {
+    selected_option: String,
+    summary: String,
+    icon_path: String,
+    timeout: Timeout,
+}
+
+impl Default for NotificationSettings {
+    fn default() -&gt; Self {
+        Self {
+            selected_option: String::from(""),
+            summary: String::from("Notification"),
+            icon_path: String::from("default_icon.svg"),
+            timeout: Timeout::Milliseconds(2000),
+        }
+    }
+}
+
+impl NotificationSettings {
+    fn show(&amp;self) {
+        let icon_path = Path::new(&amp;self.icon_path).canonicalize().unwrap_or_else(|_| Path::new("default_icon.svg").to_path_buf());
+        let icon_path_str = icon_path.to_str().unwrap_or_default();
+        let body_message = format!("You selected {}", self.selected_option);
+        Notification::new()
+            .summary(&amp;self.summary)
+            .body(&amp;body_message)
+            .icon(&amp;icon_path_str)
+            .timeout(self.timeout)
+            .show()
+            .unwrap();
+    }
+}
+
+</pre>
+</div>
+<p>
+Using the Struct in Your Function
+</p>
+
+<p>
+You can now use this struct in your clipcat<sub>notify</sub> function:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-rust">
+fn clipcat_notify(selected_option: String, summary: Option&lt;String&gt;) {
+    let mut settings = NotificationSettings::default();
+    settings.selected_option = selected_option;
+    if let Some(summary) = summary {
+        settings.summary = summary;
+    }
+    settings.show();
+}
+
+</pre>
+</div>
+<p>
+Full Integration in Your Main Function
+</p>
+
+<p>
+Here's how you would integrate this into your existing main function:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-rust">
+fn main() -&gt; Result&lt;(), Box&lt;dyn Error&gt;&gt; {
+    // Initialize clipboard context
+    let mut clipboard: ClipboardContext = ClipboardProvider::new()?;
+
+    // Get clipboard contents
+    let args_str = clipboard.get_contents()?;
+
+    // Connect to the SQLite database
+    let b_conn = Connection::open("bookmark.db")?;
+
+    // Create the bookmark table if it doesn't exist
+    b_conn.execute(
+        "CREATE TABLE IF NOT EXISTS bookmark (
+            id   INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            bookmark BLOB
+        )",
+        (), // empty list of parameters
+    )?;
+
+    // Prepare the statement to check if the bookmark exists
+    let mut stmt = b_conn.prepare("SELECT COUNT(*) FROM bookmark WHERE name = ?1")?;
+
+    // Query for the count of existing bookmarks
+    let count: i32 = stmt.query_row(params![args_str.clone()], |row| row.get(0))?;
+
+    if count == 0 {
+        // Insert a new bookmark into the database if it doesn't exist
+        let me = BookMark {
+            id: 1,
+            name: args_str.clone(), // Clone the string to use it here
+            bookmark: "Does Steven get add to db".to_string(),
+        };
+        b_conn.execute(
+            "INSERT INTO bookmark (name, bookmark) VALUES (?1, ?2)",
+            (&amp;me.name, &amp;me.bookmark),
+        )?;
+    } else {
+        println!(
+            "Bookmark with the name '{}' already exists. Skipping insertion.",
+            args_str.bright_red().bold()
+        );
+    }
+
+    // Fetch bookmarks from the database
+    let mut stmt = b_conn.prepare("SELECT id, name, bookmark FROM bookmark")?;
+    let bookmark_iter = stmt.query_map([], |row| {
+        Ok(BookMark {
+            id: row.get(0)?,
+            name: row.get(1)?,
+            bookmark: row.get(2)?,
+        })
+    })?;
+
+    // Collect the names of the bookmarks to display in Rofi
+    let mut options = Vec::new();
+    for bookmark in bookmark_iter {
+        let bookmark = bookmark?;
+        options.push(bookmark.name);
+    }
+
+    // Specify the path to the custom theme file
+    let theme_file = "rofi.rasi";
+
+    // Create a new Rofi instance and run it with the options
+    let rofi_result = Rofi::new(&amp;options).theme(Some(theme_file)).run();
+
+    // Handle the result of the Rofi run
+    match rofi_result {
+        Ok(selected_option) =&gt; clipcat_notify(selected_option, None),
+        Err(e) =&gt; println!("No option selected or an error occurred: {}", e),
+    }
+
+    Ok(())
+}
+
+fn clipcat_notify(selected_option: String, summary: Option&lt;String&gt;) {
+    let mut settings = NotificationSettings::default();
+    settings.selected_option = selected_option;
+    if let Some(summary) = summary {
+        settings.summary = summary;
+    }
+    settings.show();
+}
+
+</pre>
+</div>
+<p>
+This implementation ensures that your notification settings have default values and can be customized as needed.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-rust">
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2024-08-04 Sun 13:38</p>
+</div>
+</body>
+</html>
