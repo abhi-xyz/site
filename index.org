@@ -33,9 +33,10 @@
 
 [[File:assets/Resized.png]]
 
-
-
 [[File:articles/ages.org]]
+
+[[file:articles/ages][Ages encryption]]
+
 [[File:articles/rust.org]]
 
 [[File:articles/nix-shell.org]]
