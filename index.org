@@ -34,6 +34,8 @@
 [[File:assets/Resized.png]]
 
 
+
+[[File:articles/ages.org]]
 [[File:articles/rust.org]]
 
 [[File:articles/nix-shell.org]]
