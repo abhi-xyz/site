@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-08-11 Sun 21:33 -->
+<!-- 2024-08-11 Sun 21:37 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -229,26 +229,65 @@
 <ol class="org-ol">
 <li>Generate an encrypted file that can be decrypted with a passphrase:</li>
 </ol>
+<div class="org-src-container">
+<pre class="src src-bash">$ age --passphrase --output /path/to/encrypted_file /path/to/unencrypted_file
+</pre>
+</div>
 
 <ol class="org-ol">
 <li>Generate a key pair, saving the private key to an unencrypted file and printing the public key to stdout:</li>
 </ol>
 
+<div class="org-src-container">
+<pre class="src src-bash">
+$ age-keygen --output /path/to/file
+
+</pre>
+</div>
+
 <ol class="org-ol">
 <li>Encrypt a file with one or more public keys that are entered as literals:</li>
 </ol>
+
+<div class="org-src-container">
+<pre class="src src-bash">
+$ age --recipient public_key_1 --recipient public_key_2 /path/to/unencrypted_file --output /path/to/encrypted_file
+
+</pre>
+</div>
 
 <ol class="org-ol">
 <li>Encrypt a file with one or more public keys that are specified in a recipients file:</li>
 </ol>
 
+<div class="org-src-container">
+<pre class="src src-bash">
+$ age --recipients-file /path/to/recipients_file /path/to/unencrypted_file --output /path/to/encrypted_file
+
+</pre>
+</div>
+
 <ol class="org-ol">
 <li>Decrypt a file with a passphrase:</li>
 </ol>
 
+<div class="org-src-container">
+<pre class="src src-bash">
+$ age --decrypt --output /path/to/decrypted_file /path/to/encrypted_file
+
+</pre>
+</div>
+
 <ol class="org-ol">
 <li>Decrypt a file with a private key file:</li>
 </ol>
+
+<div class="org-src-container">
+<pre class="src src-bash">
+$ age --decrypt --identity /path/to/private_key_file --output /path/to/decrypted_file /path/to/encrypted_file
+
+</pre>
+</div>
 </div>
 </div>
 
@@ -263,7 +302,7 @@ In summary, Age is a modern and secure file encryption tool that prioritizes sim
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2024-08-11 Sun 21:33</p>
+<p class="date">Created: 2024-08-11 Sun 21:37</p>
 </div>
 </body>
 </html>
