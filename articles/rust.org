@@ -1,10 +1,13 @@
-#+OPTIONS: num:nil
+-#+OPTIONS: num:nil
 
 
 * RUST PROGRAMING LANGUAGE
 
-- This guide is for absolute biggners who have no prior programming experiance but is comfortable with terminal
+#+BEGIN_QUOTE
 
+This guide is for absolute biggners who have no prior programming experiance but is comfortable with terminal
+
+#+END_QUOTE
 
 So let's start by a simple bash script
 

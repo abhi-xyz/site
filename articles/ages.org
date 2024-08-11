@@ -14,6 +14,7 @@
 ** Age Command Examples
 
 1. Generate an encrypted file that can be decrypted with a passphrase:
+
 #+BEGIN_SRC bash
 $ age --passphrase --output /path/to/encrypted_file /path/to/unencrypted_file
 #+END_SRC
