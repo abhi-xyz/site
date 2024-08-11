@@ -60,9 +60,4 @@
 
 
 
-#+BEGIN_QUOTE
 
-Whatever you do in life will be insignificant, but it's very important that you do it 'cause nobody else will. Like when someone comes into your life and half of you says: "You're nowhere near ready". And the other half says: "Make her yours forever".
-                  - Tyler [ Remember me ]
-
-#+END_QUOTE
