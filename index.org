@@ -6,14 +6,10 @@
 #+EXPORT_FILE_NAME: ./index.html
 
 
-
-[[File:articles/ages.org][1. Ages encryption]]
-
-[[File:articles/rust.org][2. Rust for absolute beginners]]
-
-[[File:articles/nix-shell.org][3. Nix Shell guide]]
-
-** [[./notes/ten/english/chapter_1.org][English std 10]]
+* [[File:articles/ages.org][Ages encryption]]
+* [[File:articles/rust.org][Rust for absolute beginners]]
+* [[File:articles/nix-shell.org][NixOs Guide]]
+* [[./notes/ten/english/chapter_1.org][English std 10]]
 
 
 
