@@ -1,0 +1,867 @@
+% Created 2024-08-27 Tue 10:14
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Fabrice Niessen}
+\date{\today}
+\title{Org mode syntax example}
+\hypersetup{
+ pdfauthor={Fabrice Niessen},
+ pdftitle={Org mode syntax example},
+ pdfkeywords={syntax, org, document},
+ pdfsubject={Org mode syntax example},
+ pdfcreator={Emacs 29.4 (Org mode 9.6.28)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+This is an Org mode document.
+
+\textbf{Org mode} is a easy-to-write \emph{plain text} formatting syntax for authoring \LaTeX{}
+documents, creating Web pages and much more!
+
+\begin{html}
+<script src="\url{http://platform.twitter.com/widgets.js}"></script>
+<a href="\url{https://twitter.com/share}" class="twitter-share-button" data-via="f\textsubscript{niessen}">Tweet</a>
+\end{html}
+
+\section*{Basics}
+\label{sec:org0df0039}
+
+\subsection*{Biggest heading}
+\label{sec:org6289322}
+
+New chapter.
+
+\subsubsection*{Bigger heading}
+\label{sec:org0a1c795}
+
+New section.
+
+\paragraph*{Big heading}
+\label{sec:org3a92b3f}
+
+New sub-section.
+
+\paragraph*{Text breaks}
+\label{sec:org7655a77}
+
+A single newline has no effect.
+This line is part of the same paragraph.
+
+But an empty line
+
+demarcates paragraphs.
+
+By entering two consecutive backslashes,
+you can force to break lines \\[0pt]
+without starting a new paragraph.
+
+For an horizontal line, insert at least 5 dashes: this is some text above an
+horizontal rule
+
+\noindent\rule{\textwidth}{0.5pt}
+and some text below it.
+
+\paragraph*{Numbered headings}
+\label{sec:org7a47aca}
+
+You can create numbered headings up to a certain level by setting an option:
+
+\begin{verbatim}
+#+OPTIONS: H:4
+\end{verbatim}
+
+\subsubsection*{Text width}
+\label{sec:orgf9a0e2b}
+
+One morning, when Gregor Samsa woke from troubled dreams, he found himself
+transformed in his bed into a horrible vermin. He lay on his armour-like back,
+and if he lifted his head a little he could see his brown belly, slightly domed
+and divided by arches into stiff sections. The bedding was hardly able to cover
+it and seemed ready to slide off any moment. His many legs, pitifully thin
+compared with the size of the rest of him, waved about helplessly as he looked.
+
+\subsection*{Lists}
+\label{sec:orgce66284}
+
+Org markup allows you to create bulleted or numbered lists. It allows any
+combination of the two list types.
+
+\subsubsection*{Unordered lists}
+\label{sec:org9f48376}
+
+Itemized lists are marked with bullets. They are convenient to:
+
+\begin{itemize}
+\item organize data, and
+\item make the document
+\begin{itemize}
+\item prettier, and
+\item easier to read.
+\end{itemize}
+\end{itemize}
+
+Create them with a minus or a plus sign.
+
+\subsubsection*{Ordered lists}
+\label{sec:org24bbd14}
+
+Enumerated lists are marked with numbers or letters:
+
+\begin{enumerate}
+\item First element
+\begin{enumerate}
+\item First sub-item
+\item Last sub-item
+\end{enumerate}
+\item Second element
+\end{enumerate}
+
+You can have ordered lists with jumping numbers:
+
+\begin{enumerate}
+\setcounter{enumi}{0}
+\item First
+\setcounter{enumi}{1}
+\item Second
+\setcounter{enumi}{4}
+\item Jump to 5th
+\end{enumerate}
+
+\subsubsection*{Definition lists}
+\label{sec:org4901476}
+
+\begin{description}
+\item[{Definition list}] List containing definitions.
+
+\item[{Term to define}] Explication of the term.
+\end{description}
+
+\subsubsection*{Checkboxes}
+\label{sec:org6814e34}
+\begin{itemize}
+\item[{$\square$}] First item not checked
+\item[{$\boxminus$}] Second item half done
+\begin{itemize}
+\item[{$\square$}] Another first
+\item[{$\square$}] Another second
+\end{itemize}
+\item[{$\boxtimes$}] Third item checked
+\end{itemize}
+
+\subsection*{Miscellaneous effects}
+\label{sec:org63cc42a}
+
+\subsubsection*{Include Org files}
+\label{sec:orgd12317e}
+
+You can include another Org file and skip its title by using the \texttt{:lines} argument
+to \texttt{\#+INCLUDE}:
+
+\begin{verbatim}
+#+INCLUDE: chapter1.org :lines "2-"
+\end{verbatim}
+
+\begin{note}
+File inclusion, through INCLUDE keywords, is an \textbf{export-only feature}.
+\end{note}
+
+\subsubsection*{Inline HTML}
+\label{sec:orgcc336bf}
+
+You can include raw HTML in your Org documents and it will get kept as HTML
+when it's exported. XXX
+
+Text can be preformatted (in a fixed-width font).
+It is especially useful for more advanced stuff like images or tables where you
+need more control of the HTML options than Org mode actually gives you.
+
+Similarly, you can incorporate JS or do anything else you can do in a Web page
+(such as importing a CSS file).
+
+You can create named classes (to get style control from your CSS) with:
+
+\begin{verbatim}
+#+begin_info
+*Info example* \\
+Did you know...
+#+end_info
+\end{verbatim}
+
+You can also add interactive elements to the HTML such as interactive R plots.
+
+Finally, you can include an HTML file verbatim (during export) with:
+
+\begin{verbatim}
+#+INCLUDE: file.html html
+\end{verbatim}
+
+Don't edit the exported HTML file!
+
+\subsubsection*{Inline \LaTeX{}}
+\label{sec:org140a4cc}
+
+You can also use raw \LaTeX{}. XXX
+
+Text can be preformatted (in a fixed-width font).
+
+\subsubsection*{Centered text}
+\label{sec:orgd21eef9}
+
+\begin{center}
+This text is centered!
+\end{center}
+
+\subsection*{Code blocks}
+\label{sec:org545dbcb}
+
+\subsubsection*{Line numbers}
+\label{sec:org901f276}
+
+Both in \texttt{example} and in \texttt{src} snippets, you can add a \texttt{-n} switch to the end of the
+\texttt{begin} line, to get the lines of the example numbered.
+
+\begin{verbatim}
+1  (defun org-xor (a b)
+2    "Exclusive or."
+\end{verbatim}
+
+If you use a \texttt{+n} switch, the numbering from the previous numbered snippet will
+be continued in the current one:
+
+\begin{verbatim}
+3  (if a (not b) b))
+\end{verbatim}
+
+In literal examples, Org will interpret strings like \texttt{(ref:name)} as labels, and
+use them as targets for special hyperlinks like \texttt{[[(name)]]} (i.e., the reference
+name enclosed in single parenthesis).  In HTML, hovering the mouse over such
+a link will remote-highlight the corresponding code line, which is kind of
+cool.
+
+You can also add a \texttt{-r} switch which removes the labels from the source code.
+With the \texttt{-n} switch, links to these references will be labeled by the line
+numbers from the code listing, otherwise links will use the labels with no
+parentheses.  Here is an example:
+
+\begin{verbatim}
+1  (save-excursion                  ;
+2    (goto-char (point-min)))       ;
+\end{verbatim}
+
+In line 1, we remember the current position.  Line 2 jumps to
+\texttt{point-min}.
+
+\subsubsection*{Output}
+\label{sec:orgb692c10}
+
+The output from the \textbf{execution} of programs, scripts or commands can be inserted
+in the document itself, allowing you to work in the \emph{reproducible research}
+mindset.
+
+\paragraph*{Text}
+\label{sec:orgdc4ff8f}
+
+A one-liner result:
+
+\begin{verbatim}
+date +"%Y-%m-%d"
+\end{verbatim}
+
+\begin{verbatim}
+2014-03-15
+\end{verbatim}
+
+\paragraph*{Graphics}
+\label{sec:org52fb2ad}
+
+Data to be charted:
+
+\begin{table}[htbp]
+\label{tab:org846b394}
+\centering
+\begin{tabular}{rr}
+Month & Degrees\\[0pt]
+\hline
+1 & 3.8\\[0pt]
+2 & 4.1\\[0pt]
+3 & 6.3\\[0pt]
+4 & 9.0\\[0pt]
+5 & 11.9\\[0pt]
+6 & 15.1\\[0pt]
+7 & 17.1\\[0pt]
+8 & 17.4\\[0pt]
+9 & 15.7\\[0pt]
+10 & 11.8\\[0pt]
+11 & 7.7\\[0pt]
+12 & 4.8\\[0pt]
+\end{tabular}
+\end{table}
+
+Code:
+
+\begin{verbatim}
+plot(data, type="b", bty="l", col=c("#ABD249"), las=1, lwd=4)
+grid(nx=NULL, ny=NULL, col=c("#E8E8E8"), lwd=1)
+legend("bottom", legend=c("Degrees"), col=c("#ABD249"), pch=c(19))
+\end{verbatim}
+
+The resulting chart:
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{../../images/Rplot.png}
+\end{center}
+
+\paragraph*{R code block}
+\label{sec:orgb294c4a}
+
+\begin{verbatim}
+library(ggplot2)
+summary(cars)
+\end{verbatim}
+
+Plot:
+
+\begin{verbatim}
+library(ggplot2)
+qplot(speed, dist, data = cars) + geom_smooth()
+\end{verbatim}
+
+\subsection*{Inline code}
+\label{sec:org99ae7a0}
+
+You can also evaluate code inline as follows: 1 + 1 is .
+
+\subsection*{Notes at the footer}
+\label{sec:orgb255297}
+
+It is possible to define named footnotes\footnote{Extensively used in large documents.}, or ones with
+automatic anchors\footnote{Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.}.
+
+\subsection*{Formatting text}
+\label{sec:org30596a7}
+
+\subsubsection*{Text effects}
+\label{sec:org5c40bc8}
+
+\emph{Emphasize} (italics), \textbf{strongly} (bold), and \textbf{\emph{very strongly}} (bold italics).
+
+Markup elements could be nested: this is \emph{italic text which contains
+\uline{underlined text} within it}, whereas \uline{this is normal underlined text}.
+
+Markup can span across multiple lines, by default \textbf{no more than 2}:
+
+\textbf{This
+is not
+bold}
+
+Other elements to use sparingly are:
+\begin{itemize}
+\item monospaced typewriter font for \texttt{inline code}
+\item monospaced typewriter font for \texttt{verbatim text}
+\item \sout{deleted} text (vs. \uline{inserted} text)
+\item text with\textsuperscript{superscript} (for example: \texttt{m/s\textasciicircum{}\{2\}} gives m/s\textsuperscript{2})
+\item text with\textsubscript{subscript} (for example: \texttt{H\_\{2\}O} gives H\textsubscript{2}O)
+\end{itemize}
+
+\subsubsection*{Quotations}
+\label{sec:org8d518f1}
+
+Use the \texttt{quote} block to typeset quoted text.
+
+\begin{quote}
+Let us change our traditional attitude to the construction of programs:
+Instead of imagining that our main task is to instruct a computer what to do,
+let us concentrate rather on explaining to human beings what we want a
+computer to do.
+
+The practitioner of literate programming can be regarded as an essayist, whose
+main concern is with exposition and excellence of style. Such an author, with
+thesaurus in hand, chooses the names of variables carefully and explains what
+each variable means. He or she strives for a program that is comprehensible
+because its concepts have been introduced in an order that is best for human
+understanding, using a mixture of formal and informal methods that reinforce
+each other.
+
+--- Donald Knuth
+\end{quote}
+
+A short one:
+
+\begin{quote}
+Everything should be made as simple as possible,
+but not any simpler -- Albert Einstein
+\end{quote}
+
+In a \texttt{verse} environment, there is an implicit line break at the end of each
+line, and indentation and vertical space are preserved:
+
+\begin{verse}
+Everything should be made as simple as possible,\\[0pt]
+but not any simpler -- Albert Einstein\\[0pt]
+\end{verse}
+
+Typically used for quoting passages of an email message:
+
+\begin{verse}
+>> This is an email message with "nested" quoting. Lorem ipsum dolor sit amet,\\[0pt]
+>> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.\\[0pt]
+>> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.\\[0pt]
+>\\[0pt]
+> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse id sem\\[0pt]
+> consectetuer libero luctus adipiscing.\\[0pt]
+\vspace*{1em}
+Itemized or unordered lists (\texttt{ul}):\\[0pt]
+- This is the first list item.\\[0pt]
+- This is the second list item.\\[0pt]
+\vspace*{1em}
+Enumerated or ordered Lists (\texttt{ol}):\\[0pt]
+1. This is the first list item.\\[0pt]
+2. This is the second list item.\\[0pt]
+\vspace*{1em}
+Maybe an equation here?\\[0pt]
+\vspace*{1em}
+See \url{http://www.google.com/} for more information\ldots{}\\[0pt]
+\end{verse}
+
+\subsubsection*{Spaces}
+\label{sec:orga4c2a0e}
+
+Using non-breaking spaces.
+
+Insert the Unicode character \texttt{00A0} to add a non-breaking space. FIXME
+Or add/use an Org entity?
+
+\subsection*{Mathematical formulae}
+\label{sec:orge26de15}
+
+You can embed \LaTeX{} math formatting in Org mode files using the following
+syntax:
+
+\begin{itemize}
+\item For \textbf{inline math} expressions, use \texttt{\textbackslash{}(...\textbackslash{})}: \(x^2\) or \(1 < 2\).
+
+It's \emph{not} advised to use the constructs \texttt{\$...\$} (both for Org and MathJax).
+
+\item Centered display equation (the \emph{Euler theorem}):
+
+\[
+  \int_0^\infty e^{-x^2} dx = {{\sqrt{\pi}} \over {2}}
+  \]
+
+The use of \texttt{\textbackslash{}[...\textbackslash{}]} is for mathematical expressions which you want to make
+\textbf{stand out, on their own lines}.
+
+\LaTeX{} allows to inline such \texttt{\textbackslash{}[...\textbackslash{}]} constructs (\emph{quadratic formula}):
+\[ \frac{-b \pm \sqrt{b^2 - 4 a c}}{2a} \]
+
+\textbf{Double dollar signs (\texttt{\$\$}) should not be used}.
+
+\item The \emph{sinus theorem} can then be written as the equation:
+
+\begin{equation}
+\label{eqn:sinalpha}
+\frac{\sin\alpha}{a}=\frac{\sin\beta}{b}
+\end{equation}
+
+\item See Equation \ref{eq:orgf7947f0},
+
+\begin{equation}
+\label{eq:orgf7947f0}
+n_{i+1} = \frac{n_{i} (d-i) (e-1)}{(i+1)}
+\end{equation}
+
+Only captioned equations are numbered
+
+\item Other alternative: use \begin{equation*} or \begin{displaymath} (= the verbose
+form of the \texttt{\textbackslash{}[...\textbackslash{}]} construct). M-q does not fill those.
+\end{itemize}
+
+Differently from \$\ldots{}\$ and \(...\), an equation environment produces a \textbf{numbered}
+equation to which you can add a label and reference the equation by (label)
+name in other parts of the text. This is not possibly with unnumbered math
+environments (\$\$, \ldots{}).
+
+\subsection*{Special characters}
+\label{sec:org8ce5af5}
+
+Some of the widely used special characters (converted from text characters to
+their typographically correct entitites):
+
+\subsubsection*{Accents}
+\label{sec:orgedafc60}
+
+\`{A} \'{A}
+
+\subsubsection*{Punctuation}
+\label{sec:org3661bf6}
+
+Dash: -- ---
+
+Marks: !` ?`
+
+Quotations: \guillemotleft{} \guillemotright{}
+
+Miscellaneous: \P{} \textordfeminine{}
+
+\subsubsection*{Commercial symbols}
+\label{sec:orga0d2175}
+
+Property marks: \textcopyright{} \textregistered{}
+
+Currency: \textcent{} \texteuro{} \textyen{} \pounds{}
+
+\subsubsection*{Greek characters}
+\label{sec:org04d3b73}
+
+The Greek letters \(\alpha\), \(\beta\), and \(\gamma\) are used to denote angles.
+
+\subsubsection*{Math characters}
+\label{sec:org8bbe71c}
+
+Science: \textpm{} \textdiv{}
+
+Arrows: \(\to\) \(\rightarrow\) \(\leftarrow\) \(\leftrightarrow\) \(\Rightarrow\) \(\Leftarrow\) \(\Leftrightarrow\)
+
+Function names: \(\arccos\) \(\cos\)
+
+Signs and symbols: \textbullet{} \(\star\)
+
+\subsubsection*{Misc}
+\label{sec:org84a8986}
+
+Suits: \(\clubsuit\) \(\spadesuit\)
+
+\subsection*{Comments}
+\label{sec:org9bbbd39}
+
+It's possible to add comments in the document.
+
+\subsection*{Tables}
+\label{sec:org24f38e9}
+
+You can create tables with an optional header row (by using an horizontal line
+of dashes to separate it from the rest of the table).
+
+\begin{table}[htbp]
+\caption{An example of table}
+\centering
+\begin{tabular}{lll}
+Header 1 & Header 2 & Header 3\\[0pt]
+\hline
+Top left & Top middle & \\[0pt]
+ &  & Right\\[0pt]
+Bottom left & Bottom middle & \\[0pt]
+\end{tabular}
+\end{table}
+
+Columns are automatically aligned:
+
+\begin{itemize}
+\item Number-rich columns to the right, and
+\item String-rich columns to the left.
+\end{itemize}
+
+If you want to override the automatic alignment, use \texttt{<r>}, \texttt{<c>} or \texttt{<l>}.
+
+\begin{table}[htbp]
+\caption{Table with alignment}
+\centering
+\begin{tabular}{rcl}
+1 & 2 & 3\\[0pt]
+right & center & left\\[0pt]
+xxxxxxxxxxxx & xxxxxxxxxxxx & xxxxxxxxxxxx\\[0pt]
+\end{tabular}
+\end{table}
+
+Placement:
+
+\begin{tabular}{rr}
+a & b\\[0pt]
+1 & 2\\[0pt]
+\end{tabular}
+
+XXX
+Different from the following:
+
+\begin{center}
+\begin{tabular}{rr}
+a & b\\[0pt]
+1 & 2\\[0pt]
+\end{tabular}
+\end{center}
+
+\subsubsection*{Align tables on the page}
+\label{sec:org4550c3d}
+
+Here is a table on the left side:
+
+\noindent
+\begin{tabular}{rrr}
+a & b & c\\[0pt]
+\hline
+1 & 2 & 3\\[0pt]
+4 & 5 & 6\\[0pt]
+\end{tabular}
+\hfill
+
+The noindent just gets rid of the indentation of the first line of a paragraph
+which in this case is the table. The hfill adds infinite stretch after the
+table, so it pushes the table to the left.
+
+Here is a centered table:
+
+\begin{center}
+\begin{tabular}{rrr}
+a & b & c\\[0pt]
+\hline
+1 & 2 & 3\\[0pt]
+4 & 5 & 6\\[0pt]
+\end{tabular}
+\end{center}
+
+And here's a table on the right side:
+
+\hfill
+\begin{tabular}{rrr}
+a & b & c\\[0pt]
+\hline
+1 & 2 & 3\\[0pt]
+4 & 5 & 6\\[0pt]
+\end{tabular}
+
+Here the hfill adds infinite stretch before the table, so it pushes the table
+to the right.
+
+\subsection*{Images, video and audio}
+\label{sec:org57ef8ef}
+
+\subsubsection*{Images}
+\label{sec:orgeef4943}
+
+You can insert \textbf{image} files of different \textbf{formats} to a page:
+
+\begin{center}
+\begin{tabular}{lll}
+ & HTML & PDF\\[0pt]
+\hline
+gif & yes & \\[0pt]
+jpeg & yes & \\[0pt]
+png & yes & \\[0pt]
+bmp & (depends on browser support) & \\[0pt]
+\end{tabular}
+\end{center}
+
+In-line picture:
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.25\linewidth]{../../images/org-mode-unicorn.png}
+\caption{Org mode logo}
+\end{figure}
+
+Direct link to just the \href{org-mode-unicorn.png}{Unicorn picture file}.
+
+XXX Available HTML image tags include:
+
+\begin{itemize}
+\item align
+\item border
+\item bordercolor
+\item hspace
+\item vspace
+\item width
+\item height
+\item title
+\item alt
+\end{itemize}
+
+Place images side by side: XXX
+
+\subsubsection*{Video}
+\label{sec:org0026f1a}
+
+Videos can't be added directly but you can add an image with a link to the video like this:
+
+\href{http://img.youtube.com/vi/YOUTUBE\_VIDEO\_ID\_HERE/0.jpg}{http://www.youtube.com/watch?v=YOUTUBE\textsubscript{VIDEO}\textsubscript{ID}\textsubscript{HERE}}
+
+\subsubsection*{Sounds}
+\label{sec:orgf6ec72c}
+
+\subsection*{Special text boxes}
+\label{sec:orga064f10}
+
+Simple box ("inline task"): XXX
+
+\subsubsection*{Example}
+\label{sec:orgc3a76df}
+
+You can have \texttt{example} blocks.
+
+Find entries with an \textbf{exact phrase} -- To do this, put the phrase in quotes:
+
+\begin{verbatim}
+"hd ready"
+\end{verbatim}
+
+
+You can create several other boxes (\texttt{info}, \texttt{tip}, \texttt{note} or \texttt{warning}) which all have
+a different default image.
+
+\subsubsection*{Info}
+\label{sec:org9d7d3a2}
+
+An info box is displayed as follows:
+
+\begin{info}
+\textbf{Info example} \\[0pt]
+Did you know\ldots{}
+\end{info}
+
+\subsubsection*{Tip}
+\label{sec:org52bb001}
+
+A tip box is displayed as follows:
+
+\begin{tip}
+\textbf{Tip example} \\[0pt]
+Try doing it this way\ldots{}
+\end{tip}
+
+\subsubsection*{Note}
+\label{sec:org2dd3f0a}
+
+A note box is displayed as follows:
+
+\begin{note}
+\textbf{Note example} \\[0pt]
+This is a useful note\ldots{}
+\end{note}
+
+\subsubsection*{Warning}
+\label{sec:org2ff8458}
+
+A warning box is displayed as follows:
+
+\begin{warning}
+\textbf{Warning example} \\[0pt]
+Be careful!  Check that you have\ldots{}
+\end{warning}
+
+\subsection*{Links}
+\label{sec:org3dabed7}
+\subsubsection*{Anchors}
+\label{sec:orgef6bed0}
+Links generally point to an headline.
+
+They can also point to a link anchor \label{orgc288a92} in the current
+document or in another document.
+
+\subsubsection*{Hyperlinks}
+\label{sec:org6b5ec84}
+
+This document is available in \href{example.txt}{plain text}, \href{example.html}{HTML} and \href{example.pdf}{PDF}.
+
+The links are delimited by \texttt{[square brackets]}.
+
+\paragraph*{Internal links}
+\label{sec:org56ad81f}
+
+See:
+\begin{itemize}
+\item chapter \hyperref[sec:org3dabed7]{Links}
+\item section \hyperref[sec:orgef6bed0]{Anchors}
+\item \hyperref[orgc288a92]{target in the document}
+\end{itemize}
+
+\paragraph*{External links}
+\label{sec:orgc09ee30}
+
+See the \href{http://orgmode.org/}{Org mode Web site}.
+
+\href{mailto:concat.fni.at-sign.pirilampo.org}{Mailto link}
+
+\section*{Org miscellaneous}
+\label{sec:org892a90a}
+
+\subsection*{Dates}
+\label{sec:org33b6293}
+
+Timestamps: \textit{[2014-01-16 Thu] } and \textit{<2014-01-16 Thu>}.
+
+\subsection*{{\bfseries\sffamily DONE} Buy GTD book\hfill{}\textsc{online}}
+\label{sec:org3b32805}
+By default, \texttt{DONE} actions will be collapsed.
+
+Note that I should probably implement that default behavior only for \texttt{ARCHIVE}'d
+items.
+
+\subsection*{{\bfseries\sffamily TODO} Read GTD book}
+\label{sec:org5494720}
+\noindent\textbf{SCHEDULED:} \textit{<2014-09-11 Thu>}\\[0pt]
+
+By default, \textbf{all} (active) entries will be expanded at page load, so that their
+contents is visible.
+
+That can be changed by adding such a line (into your Org document):
+
+\begin{verbatim}
+#+HTML_HEAD: <script> var HS_STARTUP_FOLDED = true; </script>
+\end{verbatim}
+
+\subsection*{{\bfseries\sffamily TODO} Apply GTD methodoloy}
+\label{sec:org8e76fd8}
+\noindent\textbf{DEADLINE:} \textit{<2014-12-01 Mon>}\\[0pt]
+This section will be collapsed when loading the page because the entry has the
+value \texttt{hsCollapsed} for the property \texttt{:HTML\_CONTAINER\_CLASS:}.
+
+Powerful, no?
+
+\subsection*{Some note\hfill{}\textsc{computer:write}}
+\label{sec:orgbd033b0}
+
+You can add tags to any entry, and hightlight all entries having some specific
+tag by clicking on the buttons made accessible to you in the "Dashboard".
+
+\subsection*{Weekly review\hfill{}\textsc{computer}}
+\label{sec:org56fbb5d}
+
+Now, you can even make your weekly review in the HTML export\ldots{} Press the \texttt{r} key
+to start entering the "review mode" where all but one active entry are
+collapsed, so that you can really focus on one item at a time!
+
+\section*{Org macros}
+\label{sec:orge8367f0}
+
+
+
+
+
+Find more macros on \href{https://github.com/fniessen/org-macros}{GitHub}.
+
+\section*{BigBlow addons}
+\label{sec:org6b27c78}
+
+The string \texttt{fixme} (in \textbf{upper case}) gets replaced by a "Fix Me!" image:
+
+FIXME Delete this\ldots{}
+\end{document}
