@@ -2,8 +2,6 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../src/style.css" />
 #+HTML_HEAD: <script type="text/javascript" src="../src/script.js"></script>
 
-
-
 * RUST PROGRAMING LANGUAGE
 
 #+BEGIN_QUOTE
@@ -75,11 +73,6 @@ path in bash is also imported this way via .bashrc
     };
 
     #+END_SRC
-
-- 
--
-+ 
-
 
 *** Implementing Methods for Structs
 
@@ -279,7 +272,6 @@ fn clipcat_notify(selected_option: String, summary: Option<String>) {
 }
 
     #+END_SRC
+
 This implementation ensures that your notification settings have default values and can be customized as needed.
     
-    #+BEGIN_SRC rust
-    #+END_SRC

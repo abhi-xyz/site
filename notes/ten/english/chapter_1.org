@@ -8,7 +8,7 @@
 #+DATE: <2024-08-26 Mon>
 #+PROPERTY: https://englishsummary.com/lesson/lines-written-in-the-early-spring-poem-summary-explanation-in-english-class-11-2/
 
-#+HTML_LINK_UP: https://englishsummary.com/course/direct-and-indirect-speech-rules-with-examples/
+#+PROPERTY: https://englishsummary.com/course/direct-and-indirect-speech-rules-with-examples/
 #+HTML_LINK_HOME: ../../../index.html
 
 
