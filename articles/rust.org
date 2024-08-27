@@ -1,4 +1,4 @@
--#+OPTIONS: num:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../src/style.css" />
 
 
 * RUST PROGRAMING LANGUAGE
