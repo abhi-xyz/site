@@ -13,7 +13,7 @@
 
 [[File:articles/nix-shell.org][3. Nix Shell guide]]
 
-
+** [[./notes/ten/english/chapter_1.org][English std 10]]
 
 
 

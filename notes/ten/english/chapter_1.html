@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-08-27 Tue 12:18 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="../../../src/style.css" />
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="https://englishsummary.com/course/direct-and-indirect-speech-rules-with-examples/"> UP </a>
+ |
+ <a accesskey="H" href=""> HOME </a>
+</div><div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org9e5c822">1. English Notes</a>
+<ul>
+<li><a href="#org8bf7bdb">1.1. Adventures in a Banyan Tree</a>
+<ul>
+<li><a href="#orgac46c74">1.1.1. Introduction</a></li>
+<li><a href="#org7d59c15">1.1.2. A Mongoose and a Cobra fight.</a></li>
+<li><a href="#orgba6e3ae">1.1.3. The rat and the squirrel</a></li>
+</ul>
+</li>
+<li><a href="#org8953d4a">1.2. The Snake and the Mirror</a>
+<ul>
+<li><a href="#org943937e">1.2.1. Introduction</a></li>
+<li><a href="#org9796ef2">1.2.2. Mirror temptation</a></li>
+<li><a href="#org943a7f2">1.2.3. Encounter with a snake</a></li>
+<li><a href="#org717f2da">1.2.4. Moral</a></li>
+</ul>
+</li>
+<li><a href="#orgfe407f8">1.3. Lines Written in the Early Spring</a>
+<ul>
+<li><a href="#org2a7f9fd">1.3.1. Introduction</a></li>
+<li><a href="#org7ae7bbd">1.3.2. Stanza 1- 2</a></li>
+<li><a href="#org451fdd5">1.3.3. Stanza 3- 4</a></li>
+<li><a href="#orgdc111ee">1.3.4. Stanza 5- 6</a></li>
+</ul>
+</li>
+<li><a href="#org58db9b3">1.4. Project Tiger</a>
+<ul>
+<li><a href="#org77b8b69">1.4.1. Introduction</a></li>
+<li><a href="#org6fc4c6f">1.4.2. The unsuccessful shoot</a></li>
+<li><a href="#orgecc11f3">1.4.3. The final shoot</a></li>
+</ul>
+</li>
+<li><a href="#org03e334a">1.5. My Sister’s Shoes</a>
+<ul>
+<li><a href="#org473a711">1.5.1. Introduction</a></li>
+<li><a href="#org0143193">1.5.2. The misfortune</a></li>
+<li><a href="#org8143f17">1.5.3. Ali’s house</a></li>
+<li><a href="#org621c2f5">1.5.4. The conversation</a></li>
+</ul>
+</li>
+<li><a href="#orgda2dc03">1.6. Blowing in the Wind</a>
+<ul>
+<li><a href="#org2f404f8">1.6.1. Introduction</a></li>
+<li><a href="#orgc0b0d56">1.6.2. Stanza 1</a></li>
+<li><a href="#org9e48eed">1.6.3. Stanza 2</a></li>
+<li><a href="#org3b57396">1.6.4. Stanza 3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org4bc0efb">2. Grammar</a>
+<ul>
+<li><a href="#org10fea99">2.1. Narration</a>
+<ul>
+<li><a href="#orgbbac99a">2.1.1. Introduction to Narration</a></li>
+<li><a href="#orge334a5a">2.1.2. Definition of Narration</a></li>
+<li><a href="#org1f4511a">2.1.3. Direct and Indirect Narration</a></li>
+<li><a href="#org1c7d4d3">2.1.4. What is Direct Speech?</a></li>
+<li><a href="#org77543e0">2.1.5. What is Indirect Speech?</a></li>
+<li><a href="#org78e4dfc">2.1.6. Examples of Direct and Indirect Speech</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9e5c822" class="outline-2">
+<h2 id="org9e5c822"><span class="section-number-2">1.</span> English Notes</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org8bf7bdb" class="outline-3">
+<h3 id="org8bf7bdb"><span class="section-number-3">1.1.</span> Adventures in a Banyan Tree</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-orgac46c74" class="outline-4">
+<h4 id="orgac46c74"><span class="section-number-4">1.1.1.</span> Introduction</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+The story “Adventures in a Banyan tree” written by Ruskin Bond, describes the town of Dehra, nestling in a valley at the foot of the Himalayas and the various interesting activities that took place around a Banyan tree. The story is about a young boy being delighted and enjoying nature while sitting in a Banyan tree.
+</p>
+
+<p>
+The boy befriends a young grey coloured squirrel,who used to delve into his pockets to find something. Halfway up the tree, the boy had built a small platform on which he would spend his afternoons by reading interesting stories like that of Treasure Island, Huckleberry Finn and the Novels of Edgar Rice Burroughs and Louisa May Alcott.
+</p>
+
+<p>
+Sometimes when he did not wish to read them he would look down through the Banyan leaves at the world below at Grandmother taking down the washing,at the cook arguing with a fruit vendor or at Grandfather complaining at the Hardy Indian marigolds.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7d59c15" class="outline-4">
+<h4 id="org7d59c15"><span class="section-number-4">1.1.2.</span> A Mongoose and a Cobra fight.</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+It was an April afternoon and the boy was feeling drowsy and was thinking of going for a swim in the pond behind the house. Soon he witnessed a black cobra coming out of a group of cactus. At the same time,a mongoose also came out and went towards the cobra. The Cobra knew that the 3 feet long mongoose was a fine fighter, sharp and furious. But the cobra was also an experienced fighter. He could move with great speed and strike the mongoose. His sharp teeth were full of venom.
+</p>
+
+<p>
+It was a battle of champions. The Cobra’s tongue dashed in and out. It raised its body three feet high and raised its broad, spectacled hood. The mongoose’s hair on the spine stood up like bristles, which would help him to prevent his body from getting bitten. While he was witnessing the incident in the Banyan tree, two other spectators, a myna and a jungle crow arrived. They settled down on the cactus to watch the fight.
+</p>
+
+<p>
+The cobra swayed slowly from side to side trying to make the mongoose make a false move. But the mongoose knew the power of the glassy eyes of the snake and did not look at them and was looking at a point just below the cobra’s hood. The mongoose neatly jumped to one side and bit the snake on the back and moved away from the reach of the snake. The moment the cobra struck, the crow and the myna flew fast towards it but they collided in mid-air, and making angry noises, they returned to the cactus.
+</p>
+
+<p>
+In the final round, the crow and the myna dived at the cobra,where the cobra struck the crow with great force and it died soon, a little away from the cobra. The cobra was weakening. The mongoose raised himself on his back legs and picked the cobra by its nose. The cobra tried hard to escape but soon it stopped fighting. The mongoose then dragged it, catching it by the hood, into the bushes.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgba6e3ae" class="outline-4">
+<h4 id="orgba6e3ae"><span class="section-number-4">1.1.3.</span> The rat and the squirrel</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+The boy then got down from the tree and went to his house. He was happy that the mongoose had won. He encouraged the mongoose to live in the garden to keep the snakes off and often gave it food.
+</p>
+
+<p>
+The banyan tree was also the setting for the Strange Case of the Grey Squirrel and the White Rat. The Grandfather had bought the white rat from the bazaar for four annas. The boy would often take it to the roots and branches of the old tree. The squirrel and the white rat would together go for outing among the branches.
+</p>
+
+<p>
+Then the squirrel Started building a nest. First it tried to build the nest in the boy’s pockets. When he went home, he found straw and grass falling out. One day his Grandmother’s knitting was lost. The next day he saw something glowing in the banyan tree, then he realized it was the end of the steel knitting needle of Grandmother. The hole was filled with knitting. Among the wool there were three white baby squirrels.
+</p>
+
+<p>
+Grandfather had never seen white baby squirrels. When he stated that the white rat often visited the tree, his grandfather told him that the rat must be the father of the white baby squirrels. He said that rats and squirrels were related to each other and it was possible for them to have offspring.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8953d4a" class="outline-3">
+<h3 id="org8953d4a"><span class="section-number-3">1.2.</span> The Snake and the Mirror</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org943937e" class="outline-4">
+<h4 id="org943937e"><span class="section-number-4">1.2.1.</span> Introduction</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+“The snake and the mirror”written by Vaikom Muhammad Basheer , revolves around a horrific incident happened with a bachelor doctor who encountered a snake while admiring himself into the mirror. The story is narrated by the doctor himself in which he seems taking the situation humorously despite the danger.
+</p>
+
+<p>
+It was a hot summer night about ten o’clock when the doctor had his meal at the restaurant and he returned to his room.He had just set up medical practice and his earnings were too small .He had about sixty rupees in his suitcase along with some other shirts, dhotis and one solitary black coat.
+</p>
+
+<p>
+He then describes his room which had two windows.It was an outer room with one wall facing the open yard and had a tiled roof with long supporting gables that rested on the beam over the wall. The room had no ceiling and there was a regular traffic of rats.
+</p>
+
+<p>
+The doctor got up and went out to the veranda for little fresh air but due to the absence of the wind ,he went back into his room and sat down on the chair to read a book “The Materia Medica”. He opend it at the table on which stood a lamp, a mirror,and a small comb lying beside it.
+</p>
+</div>
+</div>
+<div id="outline-container-org9796ef2" class="outline-4">
+<h4 id="org9796ef2"><span class="section-number-4">1.2.2.</span> Mirror temptation</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+Being tempted by the mirror kept infront of him he began gazing himself into it as he was a great admirer of beauty and he believed in making himself look handsome. He was unmarried so he realised that he should do something to make his presence felt. He picked up the comb and ran it through his hair and adjusted the parting so that it looked staight and neat. While grooming himself,he could hear some sound but he ignored it.
+</p>
+
+<p>
+After admiring himself,he decided that he would shave everyday and would grow a thin moustache to look more handsome after all he was a bachelor and a doctor. He then decided that he would keep an attractive smile on his face as well to look more handsome. Then another idea strucked him that was to marry a fat woman doctor with plenty of money and a good medical practice.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org943a7f2" class="outline-4">
+<h4 id="org943a7f2"><span class="section-number-4">1.2.3.</span> Encounter with a snake</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<p>
+Suddenly there was a noise of a rubber tube fallen to the ground. No sooner did he turn than a snake wriggled over the back of the chair and landed on his shoulder.
+</p>
+
+<p>
+Soon, the snake coiled on his left arm . The snake was merely inches away from his face. As a consequence, the doctor went into a deep shock and almost turned to stone. He did not jump and tremble as there was no time to do such things. At this moment he felt the presence of God and realised that God might had not liked his words. At this realization of his true worth, the snake left the doctor and moved towards the mirror. As such, the doctor silently escaped and his life was saved.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org717f2da" class="outline-4">
+<h4 id="org717f2da"><span class="section-number-4">1.2.4.</span> Moral</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<p>
+Through this short story, the author intends to make the readers realise that one should not be boastful of himself and arrogant of temporary achievements because these things are futile in nature. It is the moment of fear that a person realises his actual worth and the useless worldly pleasures. In the story, the doctor was boasting himself of his education and good looks but as soon as he encountered the ferocious snake, he realised that how his life could end within minutes.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfe407f8" class="outline-3">
+<h3 id="orgfe407f8"><span class="section-number-3">1.3.</span> Lines Written in the Early Spring</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-org2a7f9fd" class="outline-4">
+<h4 id="org2a7f9fd"><span class="section-number-4">1.3.1.</span> Introduction</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+In the poem <b>Lines Written in the Early Spring</b>, William Wordsworth talks about the beauty of nature. He finds joy and pleasure in the scenery and creatures around him. However, such natural joy is nowhere to be found in man. The poet laments this gap that man has created between humanity and nature. This poem is written in <b>six stanzas</b> of four lines each. The rhyme scheme of each stanza is <b>abab</b>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7ae7bbd" class="outline-4">
+<h4 id="org7ae7bbd"><span class="section-number-4">1.3.2.</span> Stanza 1- 2</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p class="verse">
+I heard a thousand blended notes,<br />
+While in a grove I sate reclined,<br />
+In that sweet mood when pleasant thoughts<br />
+Bring sad thoughts to the mind.<br />
+To her fair works did Nature link<br />
+The human soul that through me ran;<br />
+And much it grieved my heart to think<br />
+What man has made of man.<br />
+</p>
+
+<p>
+The poet says that he <b>heard a thousand blended notes</b> while he was sitting reclined in a grove. The blended notes here are the songs of various birds and the sounds of natural elements that have combined together into a beautiful melody. The poet was in that <b>sweet mood when pleasant thoughts bring sad thoughts to the mind.</b>
+</p>
+
+<p>
+Therefore, although the atmosphere was sweet and happy, his happy thoughts led him to contemplative thoughts that make him sad. Nature linked the <b>human soul</b> that ran through the poet to her fair works or the beautiful things she had created. It brought much grief to the poet’s heart to think <b>what man has made of man.</b>
+</p>
+
+<p>
+He was really sad to think about the state that humanity has come to. Humanity, by disconnecting itself from the harmonies and beauties of nature, has brought itself to a state of disorder and chaos.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org451fdd5" class="outline-4">
+<h4 id="org451fdd5"><span class="section-number-4">1.3.3.</span> Stanza 3- 4</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<p class="verse">
+Through primrose tufts, in that green bower,<br />
+The periwinkle trailed its wreaths;<br />
+And ’tis my faith that every flower<br />
+Enjoys the air it breathes.<br />
+The birds around me hopped and played,<br />
+Their thoughts I cannot measure:—<br />
+But the least motion which they made<br />
+It seemed a thrill of pleasure.<br />
+</p>
+
+<p>
+The poet tells us that periwinkle flowers were scattered in circles through bunches of primroses in a pleasant shady place under the trees. He believes that <b>every flower enjoys the air it breathes.</b> Therefore, beautiful creations of Nature such as flowers find joy even in the very air they breathe. They are happy to be alive.
+</p>
+
+<p>
+The birds around the poet hopped and played. He cannot fully understand their thoughts, but even their smallest movements seemed to contain <b>a thrill of pleasure</b>. The birds were enjoying playing about in their natural habitat. The poet provides us with beautiful images of nature in these stanzas.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdc111ee" class="outline-4">
+<h4 id="orgdc111ee"><span class="section-number-4">1.3.4.</span> Stanza 5- 6</h4>
+<div class="outline-text-4" id="text-1-3-4">
+<p class="verse">
+The budding twigs spread out their fan,<br />
+To catch the breezy air;<br />
+And I must think, do all I can,<br />
+That there was pleasure there.<br />
+If this belief from heaven be sent,<br />
+If such be Nature’s holy plan,<br />
+Have I not reason to lament<br />
+What man has made of man?<br />
+</p>
+
+<p>
+The <b>budding twigs spread</b> themselves out like fans to catch the <b>breezy air</b>. The poet thinks that there <b>was pleasure there</b> too. Seeing such natural joy in everything around him, the poet believes that it might be heaven sent. Therefore, if this natural joy is <b>Nature’s holy plan</b>, the poet has <b>reason to lament what man has made of man</b>.
+</p>
+
+<p>
+The poet is sad about the state of humanity because in distancing itself from nature, it has lost the natural joy that is part of Nature’s divine plan. Humanity has brought misery upon itself through its rejection of nature.
+Conclusion
+</p>
+
+<p>
+The poet shows us the joy and peace that can be found in the beauty of nature. He wishes that humans too, were a part of this natural splendour. But humanity has disconnected itself so much from the natural world that it cannot feel the joy and clarity that nature offers anymore. It is implied that the poet wishes for humans to re-establish and strengthen their bond with nature.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org58db9b3" class="outline-3">
+<h3 id="org58db9b3"><span class="section-number-3">1.4.</span> Project Tiger</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-org77b8b69" class="outline-4">
+<h4 id="org77b8b69"><span class="section-number-4">1.4.1.</span> Introduction</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+The lesson “Project Tiger” is written by Satyajith Ray, who was an Indian filmmaker, fiction writer, publisher, illustrator, calligrapher, music composer and film critic as well. The lesson describes that how Satyajith wished to make a movie with a trained tiger. Shooting a movie with a tiger was not an easy task for him as he had to deal with a lot of problems in his film “Goopy Gyne Bagha Byne”. To shoot a scene showing the encounter of a tiger with the heroes ,Goopy and Bagha, Satyajith got a trained tiger with its trainer, Mr. Thorat from the Bharat Circus Company.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6fc4c6f" class="outline-4">
+<h4 id="org6fc4c6f"><span class="section-number-4">1.4.2.</span> The unsuccessful shoot</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<p>
+They decided to shoot the scene in a bamboo grove in a village called Notun Gram, and Mr. Thorat and his team reached there with two tigers. There they found a suitable bamboo grove to shoot the first meeting between Goopy , Bagha and the tiger. Thorat came to the location with the tiger. There were some 25 people after taking took permission to watch the shooting. When the cover of the cage was removed, people saw two well-fed and strong tigers. Thorat said that he brought two because if one failed, the other could be used for the shot.
+</p>
+
+<p>
+They put a tiger-skin collar around the tiger’s neck and tied one end of a thin- but-strong wire to this collar and the other end to an iron rod fixed to the ground. Mr. Thorat opened the cage and called out to the tiger, who ferociously jumped out of the cage and charged at the audience.
+</p>
+
+<p>
+The trainer Mr. Thorat could not bring it under his control, but it calmed down after a while. They took the required shots, but later found that the camera had failed to work, and the shots were too dark.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgecc11f3" class="outline-4">
+<h4 id="orgecc11f3"><span class="section-number-4">1.4.3.</span> The final shoot</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<p>
+They had to reshoot the scenes again in a village called Boral, near Calcutta. The lorry once again came with Thorat, the tiger, the steel wire, the special collar and the rod. The whole village came to see the shooting. The villagers were warned to keep themselves at least 70 feet away from the scene of shooting.
+</p>
+
+<p>
+The shooting began and Thorat opened the door of the cage. The tiger came out with a loud roar, and charged straight at the villagers. The crowd, some 150 people, melted away as if by magic. After that the tiger calmed down like an obedient child and walked over to the spot that was chosen, paced about as it was required to do, and then went back to its trainer. Ray and his men took all the required shots. This time the camera also worked well, and all the shots were perfect.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org03e334a" class="outline-3">
+<h3 id="org03e334a"><span class="section-number-3">1.5.</span> My Sister’s Shoes</h3>
+<div class="outline-text-3" id="text-1-5">
+</div>
+<div id="outline-container-org473a711" class="outline-4">
+<h4 id="org473a711"><span class="section-number-4">1.5.1.</span> Introduction</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<p>
+“My sister’s shoes” is an extract from the screen play of the film”Children of Heaven” directed by Majid Majidi. The story revolves around two little siblings -Ali and Zahra, who belonged to a poor family and couldn’t even tell their parents about the lost shoes because of their family’s financial issues.
+</p>
+
+<p>
+All the four scenes in the story depicts the hardships, poverty and the maturity of the children in a difficult time. Ali, presented as the protagonist of the play is hardworking, affectionate and full supportive to his family. One day he took his sister, Zahra’s shoes at a Cobbler’s shop for repairing and then with the repaired shoes he moved towards the bakery. Ali enters a bakery and collects some baked nan, stacks them on a piece of cloth and ties the cloth into a bundle.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0143193" class="outline-4">
+<h4 id="org0143193"><span class="section-number-4">1.5.2.</span> The misfortune</h4>
+<div class="outline-text-4" id="text-1-5-2">
+<p>
+Ali then visits to buy some potatoes at Akbar’s shop where he was informed and warned that his family’s credit was over the limit. The shop owner,Akbar, informed Ali that they should pay some money otherwise they would not get any more vegetable on credit. Meanwhile a junk collector comes and takes Ali’s bag of shoes thinking that it as junk. Ali comes out and searches his bag. He goes to the pile of boxes in front of the shop and picks the bundle of Nan and then looks for the bag of shoes. The vegetable boxes tumbled and vegetables got scattered on the ground.All these made Akbar extremely furious and he asked Ali to get lost.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8143f17" class="outline-4">
+<h4 id="org8143f17"><span class="section-number-4">1.5.3.</span> Ali’s house</h4>
+<div class="outline-text-4" id="text-1-5-3">
+<p>
+Ali’s mother was bed ridden due to a disk fracture and wanted to get recovery from her disk fracture. She asked Ali’s father about undergoing a surgery to which he rejected this idea as they had no money with them to afford any such process.
+</p>
+
+<p>
+Ali and Zahra were aware of the poor financial condition of their parents, so they decided not to tell them about the lost shoes of Zahra as it could give them extra burden of buying a new pair of shoes. They were also afraid that if their parents will know about the loss of shoes, they will get punishment.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org621c2f5" class="outline-4">
+<h4 id="org621c2f5"><span class="section-number-4">1.5.4.</span> The conversation</h4>
+<div class="outline-text-4" id="text-1-5-4">
+<p>
+While All and Zahra were doing their homeworks, they began their conversation through writing messages in their notebooks and exchanging between them. Zahra asked Ali what she would wear to school to which Ali suggested her to wear her slippers but later on seeing Zahra’s threatening words about informing about the shoes to the father, Ali replied that if she tells, their father will beat both of them. Finally he permitted Zahra to wear his sneakers when he is back from school.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgda2dc03" class="outline-3">
+<h3 id="orgda2dc03"><span class="section-number-3">1.6.</span> Blowing in the Wind</h3>
+<div class="outline-text-3" id="text-1-6">
+</div>
+<div id="outline-container-org2f404f8" class="outline-4">
+<h4 id="org2f404f8"><span class="section-number-4">1.6.1.</span> Introduction</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<p>
+“Blowin’ in the Wind” is a song written by <b>Bob Dylan</b> in 1962. It is a protest song that raises rhetorical questions about peace, war, and freedom. Bob Dylan believes that the answers are there, however, no one dares to find them.
+</p>
+
+<p>
+It deals with the ill effects of the Civil Rights Movement during the Vietnam War. Dylan was the view that the government focuses on war and ignores the violation of African Americans
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc0b0d56" class="outline-4">
+<h4 id="orgc0b0d56"><span class="section-number-4">1.6.2.</span> Stanza 1</h4>
+<div class="outline-text-4" id="text-1-6-2">
+<p class="verse">
+How many roads must a man walk down<br />
+Before you call him a man<br />
+How many seas must a white dove sail<br />
+Before she sleeps in the sand<br />
+Yes, 'n' how many times must the cannon balls fly<br />
+Before they're forever banned<br />
+The answer, my friend, is blowin' in the wind<br />
+The answer is blowin' in the wind<br />
+</p>
+
+<p>
+In these lines, the poet throws light on the belief system prevailing those days. It was believed that a boy can become a man only after going to war. Showing his disagreement with this belief asks ‘how many roads’ i.e. how many times a person would be required to fight wars so that he may be called a man.
+</p>
+
+<p>
+Another interpretation of this stanza can be as follows. The poet wonders how much life experiences a person has to suffer in order to be called a man. In other words, he wants to say that it is too much that society demands from a person.
+</p>
+
+<p>
+In the next line, the poet raises another rhetoric question asking <b>‘how many seas must a white dove sail‘</b> i.e. how many times the war will be fought before achieving peace. Sleeping in the sand refers to the fact that there is no war.
+</p>
+
+<p>
+In these lines, the poet uses the phrase <b>“sleeps in the sand”</b> as a reference to the passage in the Bible that describes the incident of Noah’s sending the doves out to find land after the flooding of the earth. He was searching for a place to land and rest.
+</p>
+
+<p>
+In the third line. the poet asks how many times the weapons will be used before they might be totally banned. In other words, the poet says that we have fought enough wars and they should be ended now.
+</p>
+
+<p>
+The poet says that the answer to all of the questions he raised in the verses above lies in the winds, i.e. the answer does exist that is waiting for someone to grab it. But the problem is that nobody troubles to quest for those answers.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9e48eed" class="outline-4">
+<h4 id="org9e48eed"><span class="section-number-4">1.6.3.</span> Stanza 2</h4>
+<div class="outline-text-4" id="text-1-6-3">
+<p class="verse">
+How many years can a mountain exist<br />
+Before it’s washed to the sea?<br />
+Yes ‘n’ how many times can some people exist<br />
+Before they’re allowed to be free?<br />
+Yes ‘n’ how many times must a man turn his head<br />
+Pretending he just doesn’t see?<br />
+The answer, my friend, is blowing in the wind<br />
+The answer is blowing in the wind<br />
+</p>
+
+<p>
+In the first couplet, the poet says that ‘how many years can a mountain exist’. Here mountain symbolises the pride and ego of those who desire war. According to the poet, the lust for the war of the strong (as mountains) will not last for long. It will sink into the sea someday.
+</p>
+
+<p>
+In the second couplet, there is a direct reference to the discrimination against the African Americans who were treated as second-class citizens in spite of living in <b>‘free’</b> country. The poet wonders when these people will be able to live freely and might not just <b>‘exist’</b> on the earth.
+</p>
+
+<p>
+In the third couplet, the poet wonders how many times the good men will ignore the unjust and discriminatory things that they see around them.
+</p>
+
+<p>
+He is waiting for the day when the people will raise their voice against discrimination instead of pretending that there is no inequality. In the last couplet, he repeats that the answer lies before us and waits for someone to grab it.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3b57396" class="outline-4">
+<h4 id="org3b57396"><span class="section-number-4">1.6.4.</span> Stanza 3</h4>
+<div class="outline-text-4" id="text-1-6-4">
+<p class="verse">
+Yes, 'n' how many times must a man look up<br />
+Before he can see the sky<br />
+Yes, 'n' how many ears must one man have<br />
+Before he can hear people cry<br />
+Yes, 'n' how many deaths will it take till he knows<br />
+That too many people have died<br />
+Yes, 'n' how many deaths will it take till he knows<br />
+That too many people have died<br />
+The answer, my friend, is blowin' in the wind<br />
+The answer is blowin' in the wind<br />
+</p>
+
+<p>
+In the first couplet, <b>‘sky‘</b> represents ‘freedom’. According to him, the sky i.e. freedom is hidden before the wars. So he wonders how many times one will have to face the wars in order to gain freedom and liberty. Here the poet refers to the long quest of the people for freedom.
+</p>
+
+<p>
+In the second couplet, he wonders how long the government will remain deaf to the sorrows of the commoners. When it will hear the peoples’ plea against war and in favour of peace.
+</p>
+
+<p>
+In the third couplet, he wonders when the government will realise that too many people have died because of war and it should be stopped now. It is a plea of the poet for peace. In the ending couplet, he says that the answers lie before us and we should grab it.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4bc0efb" class="outline-2">
+<h2 id="org4bc0efb"><span class="section-number-2">2.</span> Grammar</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org10fea99" class="outline-3">
+<h3 id="org10fea99"><span class="section-number-3">2.1.</span> Narration</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-orgbbac99a" class="outline-4">
+<h4 id="orgbbac99a"><span class="section-number-4">2.1.1.</span> Introduction to Narration</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+In Today’s world, learning English language is a must. English has become an absolutely necessary mean for communication in professional, educational, cultural and other fields. And to master the language, you have to properly learn the grammars, which is the core of any language. 
+</p>
+
+<p>
+Narration is one of the most important topics in English grammar. Narration will surely help you to write and speak in English perfectly. Narration has its own set of rules, definitions, structures, etc. Knowing them will help you to understand Narration clearly. So, follow and learn the rules, definitions and structures of Narration by heart and you can surely ace it. 
+</p>
+
+<p>
+Our first step of learning Narration is to know the basics of it. We are going to begin our lesson with the discussion of easy topics about Narration such as –
+</p>
+
+<ul class="org-ul">
+<li>What is Narration?</li>
+<li>Types of Narration</li>
+<li>Examples of Narration</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge334a5a" class="outline-4">
+<h4 id="orge334a5a"><span class="section-number-4">2.1.2.</span> Definition of Narration</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+Narration is the act of narrating the words of the speaker. It’s a form of expression through which the speaker voices their opinions, thoughts etc. So, whenever someone is speaking or telling something, that act of speaking is called narration. We use narration in day to day conversations, in story-telling, in educational writings etc. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1f4511a" class="outline-4">
+<h4 id="org1f4511a"><span class="section-number-4">2.1.3.</span> Direct and Indirect Narration</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<p>
+Let’s understand with an example –
+</p>
+
+<p>
+Sunny said, “I play cricket.”
+</p>
+
+<p>
+Here Sonny is the speaker and he is telling or saying something. 
+</p>
+
+<p>
+Another example – 
+</p>
+
+<p>
+Sunny said that he played cricket.
+</p>
+
+<p>
+Both are examples of narration and they are narrating the same speech. But we see some changes in the way of narrating Sunny’s words. The first narration is told in Direct speech and the second one in Indirect speech. 
+</p>
+
+<p>
+Narration can be done through two ways – 
+</p>
+
+<p>
+Direct speech
+Indirect speech 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1c7d4d3" class="outline-4">
+<h4 id="org1c7d4d3"><span class="section-number-4">2.1.4.</span> What is Direct Speech?</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<p>
+Direct speech is the narration of speech in its true form, in the exact way the speaker has spoken it. In Direct speech, the spoken sentence is put within inverted commas or quotation marks (“…”). 
+</p>
+
+<p>
+Examples of Direct speech 
+</p>
+
+<p>
+Rabi told his mother, “Buy me a football.”                                
+Rupa said to her friend, “I bought a doll.” 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org77543e0" class="outline-4">
+<h4 id="org77543e0"><span class="section-number-4">2.1.5.</span> What is Indirect Speech?</h4>
+<div class="outline-text-4" id="text-2-1-5">
+<p>
+Indirect speech tells us what the speaker has spoken without quoting the actual words of the speaker. In Indirect speech we don’t have to use comma (,) or inverted comma (“…”).  
+</p>
+
+<p>
+Examples of Indirect speech 
+</p>
+
+<p>
+Rabi told his mother to buy him a football.
+Rupa said to her friend that she had bought a doll.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org78e4dfc" class="outline-4">
+<h4 id="org78e4dfc"><span class="section-number-4">2.1.6.</span> Examples of Direct and Indirect Speech</h4>
+<div class="outline-text-4" id="text-2-1-6">
+<p>
+Table:<br />
+</p>
+<div class="ORG" id="org90f508b">
+<p>
+
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Direct Speech</th>
+<th scope="col" class="org-left">Indirect Speech</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">The old tree said, “Please, give me water.”</td>
+<td class="org-left">The old tree requested to give him water.</td>
+</tr>
+
+<tr>
+<td class="org-left">The fairy said, “I can do magic.”</td>
+<td class="org-left">The fairy said that she could do magic.</td>
+</tr>
+
+<tr>
+<td class="org-left">Puja says, “I like reading books.’’</td>
+<td class="org-left">Puja says that she likes reading books.</td>
+</tr>
+
+<tr>
+<td class="org-left">Swami said, “I live at Malgudi.’’</td>
+<td class="org-left">Swami said that he lived at Malgudi.</td>
+</tr>
+
+<tr>
+<td class="org-left">The hunter said, “I hunted a bear.’’</td>
+<td class="org-left">The hunter said that he had hunted a bear.</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2024-08-26 Mon 00:00</p>
+<p class="date">Created: 2024-08-27 Tue 12:18</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
