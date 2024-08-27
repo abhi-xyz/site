@@ -22,6 +22,8 @@
     --crust: #11111b;
 }
 
+
+
 /* General Body Styling */
 body {
     background-color: var(--background);

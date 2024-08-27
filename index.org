@@ -14,8 +14,9 @@
 * [[File:articles/ages.org][Ages encryption]]
 * [[File:articles/rust.org][Rust for absolute beginners]]
 * [[File:articles/nix-shell.org][NixOs Guide]]
-* [[./notes/ten/english/chapter_1.org][English std 10]]
-* [[./notes/ten/social/init.org][Social Science]]
+* STD 10
+** [[./notes/ten/english/chapter_1.org][English std 10]]
+** [[./notes/ten/social/init.org][Social Science]]
 
 
 
