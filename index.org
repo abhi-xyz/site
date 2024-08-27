@@ -1,4 +1,4 @@
-#+SETUPFILE: ~/web/website/org-html-themes/src/gray.theme
+#+SETUPFILE: ./org-html-themes/src/gray.theme
 
 #+TITLE: index
 #+AUTHOR: Abhinandh S
