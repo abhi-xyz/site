@@ -1,13 +1,16 @@
+#+INCLUDE: ../../../src/setup.org
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../../../src/style.css" />
-
+#+HTML_HEAD: <script type="text/javascript" src="../../../src/script.js"></script>
+#+HTML_MATHJAX: align: left indent: 5em tagside: left
 #+OPTIONS: tex:t
 
-#+SETUPFILE: "~/templates/main.org"
 #+STARTUP: show3levels
 #+DATE: <2024-08-26 Mon>
 #+PROPERTY: https://englishsummary.com/lesson/lines-written-in-the-early-spring-poem-summary-explanation-in-english-class-11-2/
 
 #+HTML_LINK_UP: https://englishsummary.com/course/direct-and-indirect-speech-rules-with-examples/
+#+HTML_LINK_HOME: ../../../index.html
+
 
 * English Notes
 ** Adventures in a Banyan Tree

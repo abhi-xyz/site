@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-08-27 Tue 15:11 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="../../../src/style.css" />
+<script type="text/javascript" src="../../../src/script.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org67bb775">1. Public Administration</a></li>
+<li><a href="#org7f8de38">2. Importance/ Significants of Public Administration</a></li>
+<li><a href="#org22ae0f4">3. Bureaucracy</a></li>
+<li><a href="#org7125d3d">4. Bureaucracy in India</a></li>
+<li><a href="#org01a6bd2">5. Indian Civil Service</a></li>
+<li><a href="#orgdfe3b1e">6. Administrative Reforms</a></li>
+<li><a href="#orgf52e234">7. E-Governance</a></li>
+<li><a href="#orgba90154">8. Right to Information</a></li>
+<li><a href="#orgbcc503d">9. Information Commission</a></li>
+<li><a href="#org5de7d55">10. Right to Service</a></li>
+<li><a href="#orgc209bc9">11. Lokpal and Lokayuktha</a></li>
+<li><a href="#orge584040">12. Central Vigilance Commission</a></li>
+<li><a href="#org0b5b453">13. Ombudsman</a></li>
+</ul>
+</div>
+</div>
+<button class="sidebar-toggle">☰</button>
+<aside class="sidebar">
+<button class="close-sidebar">&times;</button>
+<nav class="sidebar-menu">
+<a href="https://abhi-xyz.github.io/website/">Home</a> <!-- Link to your homepage -->
+<a href="../about.html">About</a> <!-- Link to your about page -->
+<a href="../services.html">Services</a> <!-- Link to your services page -->
+<a href="../contact.html">Contact</a> <!-- Link to your contact page -->
+</nav>
+</aside>
+
+<div id="outline-container-org67bb775" class="outline-2">
+<h2 id="org67bb775"><span class="section-number-2">1.</span> Public Administration</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<b>Government Institutions and Their Functions</b>
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Institution</th>
+<th scope="col" class="org-left">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Primary Health Center</td>
+<td class="org-left">Provides treatment facilities</td>
+</tr>
+
+<tr>
+<td class="org-left">Krishi Bhavan</td>
+<td class="org-left">Promotes agriculture</td>
+</tr>
+
+<tr>
+<td class="org-left">Police Station</td>
+<td class="org-left">Maintains law and order</td>
+</tr>
+
+<tr>
+<td class="org-left">School</td>
+<td class="org-left">Provides education</td>
+</tr>
+
+<tr>
+<td class="org-left">Panchayat Office</td>
+<td class="org-left">Facilitates local governance and development</td>
+</tr>
+
+<tr>
+<td class="org-left">Post Office</td>
+<td class="org-left">Manages postal services and financial transactions</td>
+</tr>
+
+<tr>
+<td class="org-left">Electricity Board</td>
+<td class="org-left">Ensures electricity supply and maintenance</td>
+</tr>
+
+<tr>
+<td class="org-left">Water Authority</td>
+<td class="org-left">Provides clean water and sanitation services</td>
+</tr>
+
+<tr>
+<td class="org-left">Revenue Office</td>
+<td class="org-left">Handles land records and tax collection</td>
+</tr>
+
+<tr>
+<td class="org-left">Transport Department</td>
+<td class="org-left">Manages public transport and vehicle registration</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+"Public Administration is concerned with the administration of the government."
+<b>N. Gladden</b>
+</p>
+
+<p>
+<b>Definition:</b> Public administration is the effective utilization of men and materials for the implementation of existing laws, governmental policies, programmes and developmental projects.
+</p>
+
+<ul class="org-ul">
+<li>In a democracy, it emphasizes serving the people’s needs and ensuring their welfare.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7f8de38" class="outline-2">
+<h2 id="org7f8de38"><span class="section-number-2">2.</span> Importance/ Significants of Public Administration</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Formulate governmental policies</li>
+<li>Provide goods and services</li>
+<li>Ensure welfare of the people</li>
+<li>Findout solutions to public issues</li>
+</ul>
+
+<p>
+Public administration plays a vital role in implementing policies, providing services, and ensuring the welfare of society. Gandhiji's vision of Grama Swaraj emphasized decentralization and the protection of vulnerable groups, which has deeply influenced India's approach to public administration.
+</p>
+
+<p>
+Gandhiji's emphasis on Grama Swaraj shows the importance of local self-governments in making public administration more accessible and effective at the grassroots level.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org22ae0f4" class="outline-2">
+<h2 id="org22ae0f4"><span class="section-number-2">3.</span> Bureaucracy</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Bureaucracy is essential for the functioning of public administration, ensuring that government services reach the people efficiently. Bureaucrats, who are the backbone of this system, make decisions, implement policies, and manage day-to-day activities across all levels of government.
+</p>
+
+<p>
+<b>Key Features of Bureaucracy:</b>
+</p>
+
+<p>
+<b>1) Hierarchical organisation</b>
+</p>
+<ul class="org-ul">
+<li>Bureaucracy is organised in such a way that there is one employee at the top and the number increases when it reaches the lower levels. This is known as hierarchical organisation.</li>
+</ul>
+
+<p>
+<b>2) Permanence</b>
+</p>
+<ul class="org-ul">
+<li>Persons appointed will continue in service till the age of retirement.</li>
+</ul>
+
+<p>
+<b>3) Appointment on the basis of Qualification</b>
+</p>
+<ul class="org-ul">
+<li>Employees are recruited and appointed on the basis of educational qualification.</li>
+</ul>
+
+<p>
+<b>4) Political Neutrality</b>
+</p>
+<ul class="org-ul">
+<li>Bureaucrats are liable to implement the policies of whichever party comes to power. Party interests should not reflect in their work. They should act neutrally.</li>
+</ul>
+
+<p>
+<b>5) Professionalism</b>
+</p>
+<ul class="org-ul">
+<li>Every government employee must be skilled in their work.</li>
+</ul>
+
+<p>
+These features contribute to an efficient public administration system, which is vital for the development of a country.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7125d3d" class="outline-2">
+<h2 id="org7125d3d"><span class="section-number-2">4.</span> Bureaucracy in India</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+<b>Recruitment Process:</b>
+</p>
+
+<p>
+The recruitment process in India is primarily conducted through competitive exams, interviews, and screenings. The Kerala Public Service Commission (PSC), as well as the Union Public Service Commission (UPSC), are responsible for recruiting candidates based on merit. This structured and merit-based system ensures that qualified individuals are appointed to serve in various government departments, contributing to efficient governance.
+</p>
+
+<p>
+In India, the civil service is a structured system of government employees who work at various levels, from the central to the state governments and public sector undertakings. These employees play a crucial role in implementing government policies, managing day-to-day operations, and ensuring that public services reach the people effectively.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org01a6bd2" class="outline-2">
+<h2 id="org01a6bd2"><span class="section-number-2">5.</span> Indian Civil Service</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+<b>All India Services</b>
+</p>
+<ul class="org-ul">
+<li>Recruits at national level</li>
+<li>Appoints in central or state service</li>
+<li><b>Eg:</b> Indian Administrative Service, Indian Police Service</li>
+</ul>
+
+<p>
+<b>Central Services</b>
+</p>
+<ul class="org-ul">
+<li>Recruits at national level</li>
+<li>Appoints in central government departments only</li>
+<li><b>Eg:</b> Indian Foreign Service, Indian Railway Service</li>
+</ul>
+
+<p>
+<b>State Services</b>
+</p>
+<ul class="org-ul">
+<li>Recruits at state level</li>
+<li>Appoints in state government departments only</li>
+<li><b>Eg:</b> Sales tax officer.</li>
+</ul>
+
+<p>
+<span class="underline">Candidates to all India services and central services are recruited by the Union Public Service Commission (UPSC)</span>. The chairman and the members of this commission are appointed by the President of India. The UPSC has elaborate mechanisms for the recruitment of candidates
+based on qualification.
+</p>
+
+<p>
+<span class="underline">At the state level, candidates are recruited by the Public Service Commission (PSC)</span> of the State. The Governor appoints the Chairman and the members of the State Public Service Commission. UPSC and State PSC’s are constituted on the basis of constitutional provisions. So they are called constitutional institutions.
+</p>
+
+<p>
+Hierarchical organisation, one of the significant features of bureaucracy creates delay in taking decision in administrative field.
+</p>
+
+<p>
+To solve this and provide better service easily, the government has taken certain steps. Let us examine them.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdfe3b1e" class="outline-2">
+<h2 id="orgdfe3b1e"><span class="section-number-2">6.</span> Administrative Reforms</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+A number of steps are taken by the government for increasing the efficiency of the services and to provide service to people in a time bound manner. They are known as administrative reforms. The intention is to make administration people friendly and efficient. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf52e234" class="outline-2">
+<h2 id="orgf52e234"><span class="section-number-2">7.</span> E-Governance</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+E-Governance leverages technology to improve administrative processes, making government services more accessible, efficient, and cost-effective. 
+</p>
+
+<p>
+<b>Example:</b>
+</p>
+<ul class="org-ul">
+<li>Higher Secondary courses, online applications for various scholarships.</li>
+</ul>
+
+<p>
+<b>Benefits:</b>
+• Can receive service with the help of information technology.
+• Need not to wait in government offices for services.
+• Government services offered speedily and with less expense.
+• Efficiency of the offices and quality of the service get enhanced.
+</p>
+
+<p>
+These facilities are now available in all government offices. The basic facilities are ensured to all through the Akshaya Centres in Kerala. People can receive the services of E-governance at home with the spread of E-literacy.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgba90154" class="outline-2">
+<h2 id="orgba90154"><span class="section-number-2">8.</span> Right to Information</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+<b>The Right to Information Act of 2005</b> empowers citizens to request information from any government office, promoting transparency, accountability, and preventing corruption. This law represents a significant step toward making the functioning of the government more open and accessible to the public.
+</p>
+
+<p>
+<b>Key Aspects of the Right to Information Act:</b>
+</p>
+
+<ol class="org-ol">
+<li>Citizen Empowerment</li>
+<li>Transparency in Governance</li>
+<li>Prevention of Corruption</li>
+<li>Responsibility and Accountability</li>
+<li>Access to Public Documents</li>
+</ol>
+
+<p>
+The <b>RTI Act</b> is a powerful tool for citizens to engage with the government and ensure that it operates in a fair and transparent manner. The citizens will get copies of public documents if they apply for them.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbcc503d" class="outline-2">
+<h2 id="orgbcc503d"><span class="section-number-2">9.</span> Information Commission</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+The Information Commission is an essential body established under the Right to Information (RTI) Act to ensure the smooth functioning of the law at both the national and state levels. 
+</p>
+
+<p>
+There will be a <b>Chief Information Commissioner</b> and <b>not more than ten members</b> in the Information Commission. 
+<span class="underline">If the authorities do not give, or refuse to give the information or gave wrong and unsatisfactory replies, one can approach the Information Commission and can file an appeal</span>. If the commission is convinced, <b>a fine of Rs. 250 per day</b> can be imposed on the employee concerned till the information is given.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5de7d55" class="outline-2">
+<h2 id="org5de7d55"><span class="section-number-2">10.</span> Right to Service</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+<b>The Right to Service Act</b> is a significant law that ensures the timely delivery of various government services to citizens. This legislation mandates that government offices provide services within a specified time frame, ensuring accountability and efficiency in public administration.
+</p>
+
+<p>
+<b>Key Features of the Right to Service Act:</b>
+</p>
+
+<ol class="org-ol">
+<li>Time-bound Services</li>
+<li>Penalty for Delays</li>
+<li>Designated Officer</li>
+<li>Citizen Empowerment</li>
+<li>Civil Society's Role</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgc209bc9" class="outline-2">
+<h2 id="orgc209bc9"><span class="section-number-2">11.</span> Lokpal and Lokayuktha</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+Lokpal and Lokayukta are <b>anti-corruption institutions</b> established to tackle corruption in public administration, bureaucracy, and politics. These institutions are part of India's efforts to promote transparency and accountability in governance.
+</p>
+
+<ul class="org-ul">
+<li><b>Lokpal</b> has the power to register cases on issues of corruption against employees and public workers and can suggest necessary actions.</li>
+
+<li><b>Lokayukta</b> is the institution constituted at the state level to hear the corruption cases.</li>
+</ul>
+
+<p>
+Both of them follow judicial procedures.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge584040" class="outline-2">
+<h2 id="orge584040"><span class="section-number-2">12.</span> Central Vigilance Commission</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+<b>The Central Vigilance Commission</b> is a crucial institution in India established to combat corruption within central government offices.
+</p>
+
+<ul class="org-ul">
+<li>Established in <b>1964</b></li>
+<li>Objective is to prevent and address corruption in central government offices and ensure transparency and accountability in public administration.</li>
+</ul>
+
+<p>
+<b>Structure:</b>
+</p>
+
+<ol class="org-ol">
+<li><b>Central Vigilance Commissioner</b> is The head of the CVC</li>
+<li><b>Chief Vigilance Officer (CVO)</b> is appointed in various central government departments to handle vigilance issues and report to the CVC.</li>
+</ol>
+
+<p>
+<b>Duties:</b>
+</p>
+
+<ul class="org-ul">
+<li>to enquire into vigilance cases and take necessary actions.</li>
+<li>Recommends necessary actions against individuals found guilty of corruption.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0b5b453" class="outline-2">
+<h2 id="org0b5b453"><span class="section-number-2">13.</span> Ombudsman</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+The Ombudsman is a key institution designed to address grievances against public officials and institutions, ensuring transparency and accountability.
+</p>
+
+<ul class="org-ul">
+<li>a <b>retired High Court Judge</b> is appointed as the Ombudsman.</li>
+<li>has the power to summon individuals, conduct inquiries, and recommend actions based on findings.</li>
+<li><b>people can directly approach the Ombudsman</b> with complaints regarding the conduct of public officials.</li>
+<li><b>Objective</b> is <span class="underline">to address complaints related to corruption, nepotism, financial misappropriation, or negligence of duties by elected representatives and bureaucrats</span>.</li>
+<li><b>Acts as a mediator</b> between the public and government institutions to resolve issues and improve administrative practices.</li>
+<li>The Ombudsman can investigate complaints, summon witnesses, and gather evidence.</li>
+<li>After the inquiry, the Ombudsman can recommend corrective actions or disciplinary measures to address the issues.</li>
+<li>Ensures that delays in service or denial of rights are addressed promptly.</li>
+<li>reinforces the principle that <b>government services are a right of the people, not a favor</b>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2024-08-27 Tue 15:11</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
