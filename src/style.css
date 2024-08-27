@@ -182,3 +182,84 @@ li {
     background-color: var(--base);
 }
 
+
+
+/* CSS for the sidebar */
+
+
+
+
+
+
+/* Sidebar styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: var(--base);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.sidebar-menu a {
+  color: var(--text);
+  padding: 14px;
+  text-decoration: none;
+  font-size: 18px;
+  border-bottom: 1px solid var(--surface0);
+}
+
+.sidebar-menu a:hover {
+  background-color: var(--surface0);
+}
+
+.close-sidebar {
+  background-color: var(--base);
+  color: var(--text);
+  border: none;
+  font-size: 17px;
+  padding: 10px;
+  cursor: pointer;
+  align-self: flex-end;
+  margin: 10px;
+}
+
+.close-sidebar:hover {
+  background-color: var(--surface0);
+}
+
+/* Toggle button styling */
+.sidebar-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: var(--surface0);
+  color: var(--text);
+  border: none;
+  padding: 10px;
+  font-size: 17px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.sidebar-toggle:hover {
+  background-color: var(--surface0);
+}
+

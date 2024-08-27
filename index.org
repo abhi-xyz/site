@@ -1,7 +1,9 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./src/style.css" />
-#+TITLE: index
+#+HTML_HEAD: <script type="text/javascript" src="./src/script.js"></script>
+-#+HTML_HEAD: <script src="./src/script.js"></script>
+#+TITLE: Home
 #+AUTHOR: Abhinandh S
-#+DATE: 03-08-2024
+#+DATE: <03-08-2024 Mon> 
 #+DESCRIPTION: Nothing special.
 #+EXPORT_FILE_NAME: ./index.html
 
@@ -13,9 +15,16 @@
 
 
 
-
-
-
+#+HTML: <button class="sidebar-toggle">☰</button>
+#+HTML: <aside class="sidebar">
+#+HTML:   <button class="close-sidebar">&times;</button>
+#+HTML:   <nav class="sidebar-menu">
+#+HTML:     <a href="#home">Home</a>
+#+HTML:     <a href="#about">About</a>
+#+HTML:     <a href="#services">Services</a>
+#+HTML:     <a href="#contact">Contact</a>
+#+HTML:   </nav>
+#+HTML: </aside>
 
 
 
