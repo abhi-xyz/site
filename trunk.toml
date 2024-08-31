@@ -1,0 +1,7 @@
+
+[build]
+target = "dist"
+dist = "docs"
+
+[output]
+base_url = "/"
