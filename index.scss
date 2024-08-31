@@ -1,0 +1,37 @@
+$primary-color: #1e1e2e;
+$background-color: #FFFFFF;
+$padding: 16px;
+
+button {
+  background-color: #008f53; /* Green */
+  border: 0;
+  color: white;
+  padding: 14px 14px;
+  text-align: center;
+  font-size: 16px;
+  margin: 2px 2px;
+  width: 100px;
+}
+
+.abc {
+  color: $primary-color;
+}
+.xyz {
+  color: pink;
+}
+
+.counter {
+    color: #008f53;
+    font-size: 48px;
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+    font-size: 12px;
+}
+
+.panel {
+  display: flex;
+  justify-content: center;
+}

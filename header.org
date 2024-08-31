@@ -1,4 +1,0 @@
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./src/style.css" />
-*ABHINANDH S*
-\\ 
-------
