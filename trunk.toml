@@ -1,7 +1,6 @@
-
 [build]
-target = "dist"
-dist = "docs"
+target = "docs"  # Output everything into the 'docs/' folder
 
 [output]
-base_url = "/"
+base_url = "/"   # Make sure the base URL is correct for GitHub Pages
+
