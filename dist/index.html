@@ -5,7 +5,7 @@
     <title>Abhinandh S</title>
 
     
-<script type="module" nonce="W7xAoyq/cycmww0JmnH1rg==">
+<script type="module" nonce="CgohwHd72jvfIBx4cd8uWQ==">
 import init, * as bindings from '/wasm-ad6d79ff123e0c4c.js';
 const wasm = await init('/wasm-ad6d79ff123e0c4c_bg.wasm');
 
@@ -22,5 +22,10 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
 <link rel="modulepreload" href="/wasm-ad6d79ff123e0c4c.js" crossorigin=anonymous integrity="sha384-Rne+zPSqwp5cq50BG+ubrUnt/ucDcE4xyvhWHHLMPUA6djAswyJ4dLLF+nzfdoFk">
 <link rel="preload" href="/wasm-ad6d79ff123e0c4c_bg.wasm" crossorigin=anonymous integrity="sha384-LjTC8sBzqWyr1QNzKF8ih/T5XVpLXc5SSwv+K/CwCxX5nEy9BC9Gbzh9DPsqKBz8" as="fetch" type="application/wasm"></head>
 
-  <body></body>
+  <body>
+    <script type="module">
+        import init from './dist/yew_wasm_example.js';
+        init();
+    </script>
+  </body>
 </html>
