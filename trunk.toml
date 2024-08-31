@@ -4,5 +4,4 @@ target = "dist"
 dist = "docs"  # This tells Trunk to put the final build into the `docs` folder
 
 [output]
-base_url = "/"  # Ensure the base URL is correct
-
+base_url = "/site/"
